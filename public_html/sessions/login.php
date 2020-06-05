@@ -9,6 +9,7 @@
 </form>
 
 <?php
+session_start();
 
 if(isset($_POST["login"])){
 	if(isset($_POST["password"]) && isset($_POST["email"])){
@@ -31,7 +32,15 @@ if(isset($_POST["login"])){
 					if ($result){
 						$rpassword = $result["password"];
 						if(password_verify($password, $rpassword)){
-							echo "<div>Password matched! You are logged in!</div>";
+							echo "<div>Passwords matched! You are logged in!</div>";
+							$_SESSION["user"] = array(
+								"id"=>$result["id"],
+								"email"=>$result["email"],
+								"first_name"=>$result["first_name"],
+								"last_name"=>$result["last_name"]
+							);
+							echo var_export($_SESSION, true);
+							echo "<a href='home.php'>Go to home page</a>";
 						}
 						else{
 							echo "<div>Invalid password!</div>";
