@@ -11,7 +11,8 @@
 	<input type="submit" name="register" value="Register"/>
 </form>
 
-<?php>
+<?php
+
 if(isset($_POST["register"])){
 	if(isset($_POST["password"]) && isset($_POST["cpassword"]) && isset($_POST["email"])){
 		$password = $_POST["password"];
