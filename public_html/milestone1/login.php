@@ -29,17 +29,8 @@ include("header.php");
 
 if(isset($_POST["login"])){
 	
-	if (empty($_POST["password"])) {
-		echo "password is required";
-	} else {
-		$password = $_POST["password"];
-		}
-
-	if (empty($_POST["email"])) {
-			echo "Email is required";
-	} else {
-			$email = $_POST["email"];
-		}
+	
+	
 	
 	
 	
@@ -47,10 +38,10 @@ if(isset($_POST["login"])){
 	 
 	
 	
-	if(isset($_POST["password"]) && isset($_POST["email"])){
+if(isset($_POST["password"]) && isset($_POST["email"])){
 		
-		//$password = $_POST["password"];
-		//$email = $_POST["email"];
+		$password = $_POST["password"];
+		$email = $_POST["email"];
 		
 		
 		
@@ -100,6 +91,16 @@ if(isset($_POST["login"])){
 		
 	}
 	
+elseif(empty($_POST["password"])) {
+		echo "password is required";
+	} 
+
+elseif (empty($_POST["email"])) {
+			echo "Email is required";
+	} 
+else((empty($_POST["password"])) && (empty($_POST["email"]))) {
+		echo "email and password is required";
+	}
 	
 	
 	
