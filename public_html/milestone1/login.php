@@ -32,7 +32,7 @@ if(empty($_POST["email"])){
 if(empty($_POST["password"])){
     $passErr = "Password is required";
   } else {
-    $password = $_POST["email"];
+    $password = $_POST["password"];
   }
 
 
