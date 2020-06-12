@@ -7,7 +7,7 @@ include("header.php");
 
 
 <span class="error">* required field</span>
-<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form method="POST" action="<?php echo htmlspecialchars($_SERVER["REQUEST_METHOD"]);?>">
 	<label for="email">Email
 	<input type="email" id="email" name="email"/>
 	<span class="error">* <?php echo $emailErr;?></span>
