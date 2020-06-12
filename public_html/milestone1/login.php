@@ -22,6 +22,15 @@ include("header.php");
 //session_start();
 
 if(isset($_POST["login"])){
+	if((isset($_POST["password"])=="") && (isset($_POST["email"])=="")){
+		echo "all fields left blank";
+	}
+	if(isset($_POST["password"])==""){
+		echo "password field left blank";
+	}
+	if(isset($_POST["email"])==""){
+		echo "email field left blank";
+	}
 	if(isset($_POST["password"]) && isset($_POST["email"])){
 		$password = $_POST["password"];
 		$email = $_POST["email"];
@@ -67,15 +76,7 @@ if(isset($_POST["login"])){
 				echo $e->getMessage();
 			}
 	}
-	if((isset($_POST["password"])=="") && (isset($_POST["email"])=="")){
-		echo "all fields left blank";
-	}
-	if(isset($_POST["password"])==""){
-		echo "password field left blank";
-	}
-	if(isset($_POST["email"])==""){
-		echo "email field left blank";
-	}
+	
 	
 }
 ?>
