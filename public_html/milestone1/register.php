@@ -6,7 +6,7 @@ include("header.php");
 <h1>  </h1>
 <style>
 body {
-	background-image: url("images/testing.jpg");
+	background-color: lightgrey;
 	
 }
 </style>
