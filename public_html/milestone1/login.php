@@ -38,8 +38,8 @@ if(isset($_POST["login"])){
 	
 	if(isset($_POST["password"]) && isset($_POST["email"])){
 		
-		//$password = $_POST["password"];
-		//$email = $_POST["email"];
+		$password = $_POST["password"];
+		$email = $_POST["email"];
 		
 		
 		
@@ -77,7 +77,9 @@ if(isset($_POST["login"])){
 					}
 					else{
 						//echo "<div>Not a valid user</div>";
-						
+						$passErr = "password is required";
+						$emailErr = "Email is required";
+						/*
 						if (empty($_POST["password"])) {
 							$passErr = "password is required";
 						  } else {
@@ -88,7 +90,7 @@ if(isset($_POST["login"])){
 							$emailErr = "Email is required";
 						  } else {
 							$email = $_POST["email"];
-						  }
+						  } */
 					}
 					
 				}
