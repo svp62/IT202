@@ -7,7 +7,7 @@ include("header.php");
 
 
 <span class="error">* required field</span>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form method="POST">
 	<label for="email">Email
 	<input type="email" id="email" name="email"/>
 	<span class="error">* <?php echo $emailErr;?></span>
@@ -24,28 +24,25 @@ include("header.php");
 <?php
 //session_start();
 
-$emailErr = $passErr = "";
-$email = $password = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  
-  
-  if (empty($_POST["email"])) {
+if(empty($_POST["email"])){
     $emailErr = "Email is required";
   } else {
     $email = $_POST["email"];
   }
-  
-  if (empty($_POST["password"])) {
-    $passErr = "pass is required";
+if(empty($_POST["password"])){
+    $passErr = "Password is required";
   } else {
-    $password = $_POST["password"];
+    $password = $_POST["email"];
   }
-}
+
+
+
 if(isset($_POST["login"])){
 	 
 	
 	
 	if(isset($_POST["password"]) && isset($_POST["email"])){
+		
 		//$password = $_POST["password"];
 		//$email = $_POST["email"];
 		
@@ -80,11 +77,11 @@ if(isset($_POST["login"])){
 							header("Location: home.php");
 						}
 						else{
-							echo "<div>Invalid password!</div>";
+							echo "<div>Not a valid password!</div>";
 						}
 					}
 					else{
-						echo "<div>Invalid user</div>";
+						echo "<div>Not a valid user</div>";
 					}
 					
 				}
