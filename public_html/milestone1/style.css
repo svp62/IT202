@@ -1,8 +1,7 @@
 <style>
 body {
-  font-size: 28px;
-  background-color: lightgrey;
-  text-align: center;
+  font-size: 32px;
+  
 }
 
 ul {
@@ -34,6 +33,13 @@ li a:hover {
 
 .active {
   background-color: #4CAF50;
+}
+body {
+	background-color: lightgrey;
+	text-align: center;
+	font-size: 28px
+	font-family: "Times New Roman", Times, serif;
+	
 }
 
 
