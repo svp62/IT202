@@ -24,12 +24,12 @@ include("header.php");
 <?php
 //session_start();
 
-if(true){
+if(empty($_POST["email"])){
     $emailErr = "Email is required";
   } else {
     $email = $_POST["email"];
   }
-if(true){
+if(empty($_POST["password"])){
     $passErr = "Password is required";
   } else {
     $password = $_POST["password"];
