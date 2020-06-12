@@ -9,18 +9,29 @@ body {
 	background-color: lightgrey;
 	
 }
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
 </style>
 <body>
 <form method="POST">
-	<label for="email">Email
+	<h1><label for="email">Email
 	<input type="email" id="email" name="email" autocomplete="off" />
-	</label>
-	<label for="p">Password
+	</label></h1>
+	<h2><label for="p">Password
 	<input type="password" id="p" name="password" autocomplete="off" />
-	</label>
-	<label for="cp">Confirm Password
+	</label></h2>
+	<h3><label for="cp">Confirm Password
 	<input type="password" id="cp" name="cpassword"/>
-	</label>
+	</label></h3>
 	<input type="submit" name="register" value="Register"/>
 </form>
 </body>

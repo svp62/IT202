@@ -11,7 +11,7 @@ body {
 include("header.php");
 
 
-echo "survey page";
+echo "SURVEY PAGE";
 
 
 ?>
