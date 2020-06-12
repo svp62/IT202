@@ -25,18 +25,17 @@ include("header.php");
 //session_start();
 
 if(isset($_POST["login"])){
-	 
+	 if(($_POST["password"]=="") && ($_POST["email"]=="")){
+		 
+		 
+		 echo "chali gyu bc";
+	 }
 	
-	if(isset($_POST["password"]) && isset($_POST["email"])){
+	else(isset($_POST["password"]) && isset($_POST["email"])){
 		$password = $_POST["password"];
 		$email = $_POST["email"];
 		
-		if((!$email) || (!$password)) {
-        $emailErr = 'Please enter your email and/or password';
-			}
 		
-		
-		else{
 		
 		//require("config.php");
 			$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
@@ -80,8 +79,9 @@ if(isset($_POST["login"])){
 				echo $e->getMessage();
 			}
 			
-		}
+		
 	}
+	
 	
 	
 }
