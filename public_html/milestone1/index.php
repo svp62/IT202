@@ -1,5 +1,5 @@
 <?php 
 include("header.php");
-echo "testing";
+echo "survey page";
 
 ?>
