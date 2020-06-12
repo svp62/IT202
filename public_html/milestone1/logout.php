@@ -6,9 +6,10 @@ include("header.php");
 //session_start();
 session_unset();
 session_destroy();
-//echo "You have been logged out ";
+  echo"                                                      ";
+  echo "You have logged out please hit the login button to login again";
 //echo var_export($_SESSION, true);
-/*
+
 
 if (ini_get("session.use_cookies")) { 
     $params = session_get_cookie_params(); 
@@ -18,16 +19,17 @@ if (ini_get("session.use_cookies")) {
     ); 
 }
 
-*/
 
+/*
 if(isset($_POST["logout"])) {
  header('Location: '.$_POST["logout"]);  
 } else {
-	echo " ";
-	echo "You have logged out please hit the login button to login again";
+	
+	
 	
  //header('Location: login.php');  
 }
+*/
 
 ?>
 
