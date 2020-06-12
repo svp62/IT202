@@ -4,10 +4,12 @@ include("header.php");
 ?>
 
 <h1>  </h1>
+<style>
 body {
 	background-image: url("testing.jpg");
 	
 }
+</style>
 <body>
 <form method="POST">
 	<label for="email">Email
