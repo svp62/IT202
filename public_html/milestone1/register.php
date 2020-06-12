@@ -3,9 +3,12 @@ include("header.php");
 
 ?>
 
-
-
-
+<h1>  </h1>
+body {
+	background-image: url("testing.jpg");
+	
+}
+<body>
 <form method="POST">
 	<label for="email">Email
 	<input type="email" id="email" name="email" autocomplete="off" />
@@ -18,6 +21,7 @@ include("header.php");
 	</label>
 	<input type="submit" name="register" value="Register"/>
 </form>
+</body>
 
 <?php
 
