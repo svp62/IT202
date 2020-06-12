@@ -10,6 +10,7 @@ include("header.php");
 <form method="POST">
 	<label for="email">Email
 	<input type="email" id="email" name="email"/>
+	<span class="error">* <?php echo $emailErr;?></span>
 	</label><br><br>
 	<label for="p">Password
 	<input type="password" id="p" name="password"/>
@@ -22,15 +23,11 @@ include("header.php");
 //session_start();
 
 if(isset($_POST["login"])){
-	if((isset($_POST["password"])=="") && (isset($_POST["email"])=="")){
-		echo "all fields left blank";
-	}
-	if(isset($_POST["password"])==""){
-		echo "password field left blank";
-	}
-	if(isset($_POST["email"])==""){
-		echo "email field left blank";
-	}
+	
+	if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+	} 
+	
 	if(isset($_POST["password"]) && isset($_POST["email"])){
 		$password = $_POST["password"];
 		$email = $_POST["email"];
