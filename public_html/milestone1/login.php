@@ -10,10 +10,10 @@ include("header.php");
 <form method="POST">
 	<label for="email">Email
 	<input type="email" id="email" name="email"/>
-	</label>
+	</label><br><br>
 	<label for="p">Password
 	<input type="password" id="p" name="password"/>
-	</label>
+	</label><br><br><br>
 	<input type="submit" name="login" value="Login"/>
 </form>
 
