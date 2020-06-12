@@ -4,7 +4,13 @@ include("header.php");
 ?>
 
 <h1>   </h1>
-
+<style>
+body {
+	background-color: lightgrey;
+	
+}
+</style>
+<body>
 
 <form method="POST">
 	<label for="email">Email
@@ -15,6 +21,7 @@ include("header.php");
 	</label>
 	<input type="submit" name="login" value="Login"/>
 </form>
+</body>
 
 <?php
 //session_start();

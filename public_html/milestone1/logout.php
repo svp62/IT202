@@ -1,3 +1,12 @@
+<style>
+body {
+	background-color: lightgrey;
+	
+}
+</style>
+<body>
+
+
 <?php
 include("header.php");
 //session_start();
@@ -20,3 +29,5 @@ if(isset($_POST["logout"])) {
 }
 
 ?>
+
+</body>
