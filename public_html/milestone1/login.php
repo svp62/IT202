@@ -67,6 +67,16 @@ if(isset($_POST["login"])){
 				echo $e->getMessage();
 			}
 	}
+	if((isset($_POST["password"])=="") && (isset($_POST["email"])=="")){
+		echo "all fields left blank";
+	}
+	if(isset($_POST["password"])==""){
+		echo "password field left blank";
+	}
+	if(isset($_POST["email"])==""){
+		echo "email field left blank";
+	}
+	
 }
 ?>
 

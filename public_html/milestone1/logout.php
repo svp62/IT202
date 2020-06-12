@@ -6,7 +6,7 @@ include("header.php");
 //session_start();
 session_unset();
 session_destroy();
-  echo"                                                      ";
+  
   echo "You have logged out please hit the login button to login again";
 //echo var_export($_SESSION, true);
 
