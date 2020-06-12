@@ -24,18 +24,19 @@ include("header.php");
 <?php
 //session_start();
 
-if(empty($_POST["email"])){
-    $emailErr = "Email is required";
-  } else {
-    $email = $_POST["email"];
-  }
-if(empty($_POST["password"])){
-    $passErr = "Password is required";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["password"])) {
+    $passErr = "password is required";
   } else {
     $password = $_POST["password"];
   }
 
-
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = $_POST["email"];
+  }
+}
 
 if(isset($_POST["login"])){
 	 
