@@ -19,6 +19,7 @@ if (ini_get("session.use_cookies")) {
 if(isset($_POST["logout"])) {
  header('Location: '.$_POST["logout"]);  
 } else {
+	echo "you have logged out please login again";
  header('Location: login.php');  
 }
 
