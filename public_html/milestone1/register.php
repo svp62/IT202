@@ -4,31 +4,21 @@ include("header.php");
 ?>
 
 <h1>  </h1>
-<style>
-body {
-	background-color: lightgrey;
-	
-}
 
 
-h3 {
-  text-align: center;
-}
-</style>
-<body>
 <form method="POST">
-	<h3><label for="email">Email
+	<label for="email">Email
 	<input type="email" id="email" name="email" autocomplete="off" />
-	</label></h3>
-	<h3><label for="p">Password
+	</label>
+	<label for="p">Password
 	<input type="password" id="p" name="password" autocomplete="off" />
-	</label></h3>
-	<h3><label for="cp">Confirm Password
+	</label>
+	<label for="cp">Confirm Password
 	<input type="password" id="cp" name="cpassword"/>
-	</label></h3>
-	<h3><input type="submit" name="register" value="Register"/></h3>
+	</label>
+	<input type="submit" name="register" value="Register"/>
 </form>
-</body>
+
 
 <?php
 

@@ -1,10 +1,4 @@
-<style>
-body {
-	background-color: lightgrey;
-	
-}
-</style>
-<body>
+
 
 
 <?php
@@ -30,4 +24,3 @@ if(isset($_POST["logout"])) {
 
 ?>
 
-</body>

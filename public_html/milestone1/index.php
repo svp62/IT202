@@ -1,10 +1,5 @@
-<style>
-body {
-	background-color: lightgrey;
-	
-}
-</style>
-<body>
+
+
 
 
 <?php 
@@ -16,4 +11,4 @@ echo "SURVEY PAGE";
 
 ?>
 
-</body>
+

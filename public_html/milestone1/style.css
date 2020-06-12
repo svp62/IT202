@@ -33,4 +33,14 @@ li a:hover {
 .active {
   background-color: #4CAF50;
 }
+
+body {
+	background-color: lightgrey;
+	
+}
+
+
+h3 {
+  text-align: center;
+}
 </style>
