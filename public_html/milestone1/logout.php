@@ -11,5 +11,12 @@ if (ini_get("session.use_cookies")) {
         $params["path"], $params["domain"], 
         $params["secure"], $params["httponly"] 
     ); 
-} 
+}
+
+if(isset($_POST["logout"])) {
+ header('Location: '.$_POST["logout"]);  
+} else {
+ header('Location: home.php');  
+}
+
 ?>
