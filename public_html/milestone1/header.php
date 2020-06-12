@@ -1,6 +1,6 @@
 <head>
     <title>Welcome to the survey page</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    
 </head>
 <?php
 require("config.php");
