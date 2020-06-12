@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
   }
 }
-elseif(isset($_POST["login"])){
+if(isset($_POST["login"])){
 	 
 	
 	
