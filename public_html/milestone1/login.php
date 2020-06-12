@@ -31,7 +31,7 @@ if(isset($_POST["login"])){
 		 echo "chali gyu bc";
 	 }
 	
-	else(isset($_POST["password"]) && isset($_POST["email"])){
+	if(isset($_POST["password"]) && isset($_POST["email"])){
 		$password = $_POST["password"];
 		$email = $_POST["email"];
 		
