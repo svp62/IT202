@@ -9,13 +9,7 @@ body {
 	background-color: lightgrey;
 	
 }
-h1 {
-  text-align: center;
-}
 
-h2 {
-  text-align: center;
-}
 
 h3 {
   text-align: center;
@@ -23,16 +17,16 @@ h3 {
 </style>
 <body>
 <form method="POST">
-	<h1><label for="email">Email
+	<h3><label for="email">Email
 	<input type="email" id="email" name="email" autocomplete="off" />
-	</label></h1>
-	<h2><label for="p">Password
+	</label></h3>
+	<h3><label for="p">Password
 	<input type="password" id="p" name="password" autocomplete="off" />
-	</label></h2>
+	</label></h3>
 	<h3><label for="cp">Confirm Password
 	<input type="password" id="cp" name="cpassword"/>
 	</label></h3>
-	<input type="submit" name="register" value="Register"/>
+	<h3><input type="submit" name="register" value="Register"/></h3>
 </form>
 </body>
 
