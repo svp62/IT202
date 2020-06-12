@@ -10,12 +10,12 @@ include("header.php");
 <form method="POST">
 	<label for="email">Email
 	<input type="email" id="email" name="email"/>
-	<span class="error">* <?php echo $emailErr;?></span>
+	<span class="error">* </span>
 	</label><br><br>
 	
 	<label for="p">Password
 	<input type="password" id="p" name="password"/>
-	<span class="error">* <?php echo $passErr;?></span>
+	<span class="error">* </span>
 	</label><br><br><br>
 	<input type="submit" name="login" value="Login"/>
 </form>
@@ -29,6 +29,17 @@ include("header.php");
 
 if(isset($_POST["login"])){
 	
+	if (empty($_POST["password"])) {
+		echo "password is required";
+	} else {
+		$password = $_POST["password"];
+		}
+
+	if (empty($_POST["email"])) {
+			echo "Email is required";
+	} else {
+			$email = $_POST["email"];
+		}
 	
 	
 	
@@ -38,8 +49,8 @@ if(isset($_POST["login"])){
 	
 	if(isset($_POST["password"]) && isset($_POST["email"])){
 		
-		$password = $_POST["password"];
-		$email = $_POST["email"];
+		//$password = $_POST["password"];
+		//$email = $_POST["email"];
 		
 		
 		
@@ -76,21 +87,8 @@ if(isset($_POST["login"])){
 						}
 					}
 					else{
-						//echo "<div>Not a valid user</div>";
-						$passErr = "password is required";
-						$emailErr = "Email is required";
-						/*
-						if (empty($_POST["password"])) {
-							$passErr = "password is required";
-						  } else {
-							$password = $_POST["password"];
-						  }
-
-							if (empty($_POST["email"])) {
-							$emailErr = "Email is required";
-						  } else {
-							$email = $_POST["email"];
-						  } */
+						echo "<div>Not a valid user</div>";
+						
 					}
 					
 				}
