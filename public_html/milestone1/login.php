@@ -24,7 +24,10 @@ include("header.php");
 <?php
 //session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+
+if(isset($_POST["login"])){
   if (empty($_POST["password"])) {
     $passErr = "password is required";
   } else {
@@ -36,9 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $email = $_POST["email"];
   }
-}
-
-if(isset($_POST["login"])){
 	 
 	
 	
