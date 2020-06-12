@@ -12,11 +12,11 @@ include("header.php");
 	<input type="email" id="email" name="email"/>
 	
 	</label><br><br>
-	<span class="error"> <?php echo $emailErr;?></span>
+	
 	<label for="p">Password
 	<input type="password" id="p" name="password"/>
 	</label><br><br><br>
-	<span class="error"> <?php echo $emailErr;?></span>
+	
 	<input type="submit" name="login" value="Login"/>
 </form>
 
@@ -25,11 +25,8 @@ include("header.php");
 //session_start();
 
 if(isset($_POST["login"])){
-	 if(isset($_POST["password"]=="") && isset($_POST["email"]=="")){
-		 
-		 
-		 $emailErr = "chali gyu bc";
-	 }
+	 
+	
 	
 	if(isset($_POST["password"]) && isset($_POST["email"])){
 		$password = $_POST["password"];
