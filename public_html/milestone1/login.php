@@ -10,7 +10,7 @@ include("header.php");
 <form method="POST">
 	<label for="email">Email
 	<input type="email" id="email" name="email"/>
-	<span class="error">* <?php echo $emailErr;?></span>
+	<span class="error"> <?php echo $emailErr;?></span>
 	</label><br><br>
 	<label for="p">Password
 	<input type="password" id="p" name="password"/>
@@ -23,14 +23,19 @@ include("header.php");
 //session_start();
 
 if(isset($_POST["login"])){
-	
-	if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-	} 
+	 
 	
 	if(isset($_POST["password"]) && isset($_POST["email"])){
 		$password = $_POST["password"];
 		$email = $_POST["email"];
+		
+		if((!$email) || (!$password)) {
+        $emailErr = 'Please enter your email and/or password';
+			}
+		
+		
+		
+		
 		//require("config.php");
 			$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 			try{
