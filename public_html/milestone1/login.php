@@ -25,7 +25,7 @@ include("header.php");
 //session_start();
 
 if(isset($_POST["login"])){
-	 if(($_POST["password"]=="") && ($_POST["email"]=="")){
+	 if(isset($_POST["password"]=="") && isset($_POST["email"]=="")){
 		 
 		 
 		 echo "chali gyu bc";
