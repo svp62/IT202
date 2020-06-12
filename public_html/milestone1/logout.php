@@ -14,9 +14,7 @@ if (ini_get("session.use_cookies")) {
 }
 
 if(isset($_POST["logout"])) {
- header('Location: '.$_POST["logout"]);  
-} else {
- header('Location: header.php');  
+ header('Location: home.php');  
 }
 
 ?>
