@@ -3,7 +3,7 @@ include("header.php");
 
 ?>
 
-<h4>REGISTER</h4>
+
 
 
 <form method="POST">
