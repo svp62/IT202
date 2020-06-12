@@ -15,8 +15,8 @@ include("header.php");
 	
 	<label for="p">Password
 	<input type="password" id="p" name="password"/>
-	</label><br><br><br>
 	<span class="error">* <?php echo $passErr;?></span>
+	</label><br><br><br>
 	<input type="submit" name="login" value="Login"/>
 </form>
 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
   }
 }
-if(isset($_POST["login"])){
+elseif(isset($_POST["login"])){
 	 
 	
 	

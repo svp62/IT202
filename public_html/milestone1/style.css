@@ -34,6 +34,7 @@ li a:hover {
 .active {
   background-color: #4CAF50;
 }
+.error {color: #FF0000;}
 body {
 	background-color: lightgrey;
 	text-align: center;
