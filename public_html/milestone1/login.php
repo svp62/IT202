@@ -28,7 +28,7 @@ if(isset($_POST["login"])){
 	 if(isset($_POST["password"]=="") && isset($_POST["email"]=="")){
 		 
 		 
-		 echo "chali gyu bc";
+		 $emailErr = "chali gyu bc";
 	 }
 	
 	if(isset($_POST["password"]) && isset($_POST["email"])){
