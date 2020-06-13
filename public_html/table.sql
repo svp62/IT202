@@ -15,7 +15,11 @@ SELECT * FROM customer;
 
 
 
-CREATE TABLE Survey_types ( surveyID int NOT NULL, category varchar(255), description varchar(255), PRIMARY KEY (surveyID)); 
+CREATE TABLE Survey_types ( 
+	surveyID int NOT NULL, 
+	category varchar(255), 
+	description varchar(255), PRIMARY KEY (surveyID)
+); 
 
 INSERT INTO Survey_types VALUES ('1','beauty','everything related to makeup, nails, soap, lotions and perfumes'); 
 INSERT INTO Survey_types VALUES ('2','resturant','breakfast lunch dinner cafes'); 
