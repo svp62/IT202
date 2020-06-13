@@ -2,19 +2,19 @@
 include("header.php");
 
 ?>
-
 <h1>  </h1>
+<h2>Please Register here. </h2>
 
 
-<form method="POST">
+<form method="POST" autocomplete="off" >
 	<label for="email">Email
-	<input type="email" id="email" name="email" autocomplete="off" />
+	<input type="email" id="email" name="email" required />
 	</label><br><br>
 	<label for="p">Password
-	<input type="password" id="p" name="password" autocomplete="off" />
+	<input type="password" id="p" name="password" required />
 	</label><br><br>
 	<label for="cp">Confirm Password
-	<input type="password" id="cp" name="cpassword"/>
+	<input type="password" id="cp" name="cpassword" required />
 	</label><br><br><br>
 	<input type="submit" name="register" value="Register"/>
 </form>

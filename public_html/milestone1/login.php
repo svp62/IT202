@@ -3,18 +3,18 @@ include("header.php");
 
 ?>
 
-<h1>   </h1>
-
+<h1>  </h1>
+<h2>Please Login here with your existing account.</h2>
 
 <span class="error">* required field</span>
-<form method="POST">
+<form method="POST" autocomplete="off">
 	<label for="email">Email
-	<input type="email" id="email" name="email" required/>
+	<input type="email" id="email" name="email" required />
 	<span class="error">* </span>
 	</label><br><br>
 	
 	<label for="p">Password
-	<input type="password" id="p" name="password" required/>
+	<input type="password" id="p" name="password" required />
 	<span class="error">* </span>
 	</label><br><br><br>
 	<input type="submit" name="login" value="Login"/>
