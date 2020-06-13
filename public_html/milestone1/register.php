@@ -6,7 +6,7 @@ include("header.php");
 <h2>Please Register here. </h2>
 
 
-<form method="POST" autocomplete="off" >
+<form method="POST">
 	<label for="email">Email
 	<input type="email" id="email" name="email" required />
 	</label><br><br>

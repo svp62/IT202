@@ -1,8 +1,10 @@
+<h1>  </h1>
+
 <?php 
 include("header.php");
 
 
-echo " SURVEY PAGE ";
+echo " THIS IS A SURVEY PAGE ";
 
 
 ?>
