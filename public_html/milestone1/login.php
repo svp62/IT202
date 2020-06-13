@@ -9,12 +9,12 @@ include("header.php");
 <span class="error">* required field</span>
 <form method="POST">
 	<label for="email">Email
-	<input type="email" id="email" name="email"/>
+	<input type="email" id="email" name="email" required/>
 	<span class="error">* </span>
 	</label><br><br>
 	
 	<label for="p">Password
-	<input type="password" id="p" name="password"/>
+	<input type="password" id="p" name="password" required/>
 	<span class="error">* </span>
 	</label><br><br><br>
 	<input type="submit" name="login" value="Login"/>
@@ -29,14 +29,7 @@ include("header.php");
 
 if(isset($_POST["login"])){
 	
-	
-	
-	
-	
-	
-	 
-	 
-	
+		
 	
 if(isset($_POST["password"]) && isset($_POST["email"])){
 		
@@ -91,16 +84,7 @@ if(isset($_POST["password"]) && isset($_POST["email"])){
 		
 	}
 	
-elseif(empty($_POST["password"])) {
-		echo "password is required";
-	} 
 
-elseif (empty($_POST["email"])) {
-			echo "Email is required";
-	} 
-else((empty($_POST["password"])) && (empty($_POST["email"]))) {
-		echo "email and password is required";
-	}
 	
 	
 	
