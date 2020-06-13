@@ -1,6 +1,6 @@
 CREATE TABLE customer (
     customerID int NOT NULL,
-    customerAge int NOT NULL,
+    customerAge int,
     FirstName varchar(255),
     LastName varchar(255),
     surveyID int,
