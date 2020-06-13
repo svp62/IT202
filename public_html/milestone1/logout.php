@@ -1,8 +1,5 @@
 
-<form action="login.php">
-  <br><br>
-  <input type="submit" value="Submit">
-</form> 
+ 
 
 <?php
 include("header.php");
@@ -36,3 +33,7 @@ if(isset($_POST["logout"])) {
 
 ?>
 
+<form action="login.php">
+  <br><br>
+  <input type="submit" value="Login Again">
+</form>
