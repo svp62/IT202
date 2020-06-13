@@ -1,5 +1,8 @@
 
-
+<form action="login.php">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
 
 <?php
 include("header.php");
