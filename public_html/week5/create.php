@@ -16,10 +16,9 @@ if(isset($_POST["created"])){
     $description = $_POST["description"];
     $visibility = $_POST["visibility"];
     if(!empty($title) && !empty($description) && !empty($visibility)){
-        //require("config.php");
+        
 		require("functions.php");
-		//$db = getDB();
-        //$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+		
         try{
             $db = getDB();
             $stmt = $db->prepare("INSERT INTO Survey (title, description, visibility) VALUES (:title, :description, :visibility)");
@@ -33,12 +32,12 @@ if(isset($_POST["created"])){
                 echo var_export($e, true);
             }
             else{
-                //echo var_export($result, true);
+                
                 if ($result){
-                    echo "Successfully inserted new data: " . $title;
+                    echo "Successfully created new data: " . $title;
                 }
                 else{
-                    echo "Error inserting data";
+                    echo "Error creating data";
                 }
             }
         }

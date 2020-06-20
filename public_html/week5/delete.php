@@ -1,8 +1,6 @@
 <?php
 require("functions.php");
 $db = getDB();
-$idnum = getID();
-/*
 $idnum = -1;
 $result = array();
 
@@ -15,7 +13,6 @@ if(isset($_GET["idnum"])){
 else{
     echo "ID not provided in url. Please put '?idnum=("id number where you want to update data")' at the end of URL. ";
 }
-*/
 ?>
 
 <form method="POST">
@@ -28,21 +25,19 @@ else{
 	<label for="visibility">Visibility
 	<input type="number" id="visibility" name="visibility" value="<?php echo get($result, "visibility");?>" />
 	</label>
-	<input type="submit" name="updated" value="Update Survey"/>
+	<input type="submit" name="delete" value="Delete Survey"/>
 </form>
 
 <?php
-if(isset($_POST["updated"])){
+if(isset($_POST["delete"])){
     $title = $_POST["title"];
     $description = $_POST["description"];
     $visibility = $_POST["visibility"];
     if(!empty($title) && !empty($description) && !empty($visibility)){
         try{
-            $stmt = $db->prepare("UPDATE Survey set title = :title, description=:description, visibility=:visibility where id=:id");
+            $stmt = $db->prepare("DELETE FROM Survey where id=:id");
             $result = $stmt->execute(array(
-                ":title" => $title,
-                ":description" => $description,
-                ":visibility" => $visibility,
+                
                 ":id" => $idnum
             ));
             $e = $stmt->errorInfo();
@@ -52,10 +47,10 @@ if(isset($_POST["updated"])){
             else{
                 
                 if ($result){
-                    echo "Successfully updated data: " . $title;
+                    echo "Successfully deleted data: " . $title;
                 }
                 else{
-                    echo "Error updating data";
+                    echo "Error deleting data";
                 }
             }
         }
