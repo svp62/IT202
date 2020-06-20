@@ -1,8 +1,7 @@
 <?php
 require("functions.php");
 $db = getDB();
-$idnum = getID();
-/*
+
 $idnum = -1;
 $result = array();
 
@@ -15,7 +14,7 @@ if(isset($_GET["idnum"])){
 else{
     echo "ID not provided in url. Please put '?idnum=("id number where you want to update data")' at the end of URL. ";
 }
-*/
+
 ?>
 
 <form method="POST">
