@@ -11,7 +11,7 @@ if(isset($_GET["idnum"])){
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 else{
-    echo "ID not provided in url. Please put '?idnum=("id number where you want to update data")' at the end of URL. ";
+    echo "ID not provided in url. Please put '?idnum=(id number where you want to update data)' at the end of URL. ";
 }
 ?>
 
