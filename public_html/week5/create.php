@@ -33,12 +33,12 @@ if(isset($_POST["created"])){
                 echo var_export($e, true);
             }
             else{
-                echo var_export($result, true);
+                //echo var_export($result, true);
                 if ($result){
                     echo "Successfully inserted new data: " . $title;
                 }
                 else{
-                    echo "Error inserting record";
+                    echo "Error inserting data";
                 }
             }
         }
@@ -47,7 +47,7 @@ if(isset($_POST["created"])){
         }
     }
     else{
-        echo "Title discription and visibility must not be empty.";
+        echo "Title, Description and Visibility fields cannot be empty.";
     }
 }
 ?>
