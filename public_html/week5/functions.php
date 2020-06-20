@@ -17,12 +17,12 @@ function getDB(){
 
 function getID(){
     //global $db;
-	global $id = -1;
-    if(isset($_GET["id"])){
+	global $idnum = -1;
+    if(isset($_GET["idnum"])){
 		
-		$idnum = $_GET["id"];
+		$idnum = $_GET["idnum"];
 		$stmt = $db->prepare("SELECT * FROM Survey where id = :id");
-		$stmt->execute([":id"=>$id]);
+		$stmt->execute([":id"=>$idnum]);
 		$result = $stmt->fetch(PDO::FETCH_ASSOC);
 	
 	}
