@@ -33,7 +33,7 @@ if(isset($_POST["login"])){
 		$email = $_POST["email"];
 		if(!empty($email) && !empty($password)){
 	
-		if(isset($_POST["password"]) && isset($_POST["email"])){
+		//if(isset($_POST["password"]) && isset($_POST["email"])){
 				
 				
 				
@@ -83,7 +83,7 @@ if(isset($_POST["login"])){
 					}
 					
 				
-			}
+			//}
 	
 }
 
