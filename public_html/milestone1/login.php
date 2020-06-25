@@ -88,7 +88,7 @@ if(isset($_POST["login"])){
 }
 
 else{
-			echo"<div>Email and password fields are required.</div>"
+			echo"<div>Email and password fields are required.</div>";
 	
 	}
 	
