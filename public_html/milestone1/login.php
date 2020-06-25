@@ -47,13 +47,7 @@ if(isset($_POST["login"])){
 		
 		if(!empty($email) && !empty($password)){
 	
-		//if(isset($_POST["password"]) && isset($_POST["email"])){
-				
-				
-				
-				
-				
-				//require("config.php");
+		
 					$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 					try{
 						$db = new PDO($connection_string, $dbuser, $dbpass);
@@ -97,16 +91,11 @@ if(isset($_POST["login"])){
 					}
 					
 				
-			//}
+			
 	
 	}
 
 
-
-		else{
-					echo"<div>Email and password fields are required.</div>";
-			
-			}
 	
 	
 	
