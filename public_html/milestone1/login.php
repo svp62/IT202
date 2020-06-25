@@ -7,7 +7,7 @@ include("header.php");
 <h2>Please Login here with your existing account.</h2>
 
 <span class="error">* required field</span>
-<form method="POST" action="<?php echo htmlspecialchars($_POST["PHP_SELF"]);?>">
+<form method="POST" >
 	<label for="email">Email
 	<input type="email" id="email" name="email" />
 	<span class="error">* <?php echo $emailerr;?></span>
