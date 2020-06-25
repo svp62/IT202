@@ -7,7 +7,7 @@ include("header.php");
 <h2>Please Login here with your existing account.</h2>
 
 <span class="error">* required field</span>
-<form method="POST">
+<form method="POST" action="<?php echo htmlspecialchars($_POST["PHP_SELF"]);?>">
 	<label for="email">Email
 	<input type="email" id="email" name="email" />
 	<span class="error">* <?php echo $emailerr;?></span>
@@ -42,7 +42,11 @@ if(isset($_POST["login"])){
 			$passerr = "password is required";
 		}
 		
-		
+		if(empty($email) && empty($password)){
+			
+			$emailerr = "Email is required";
+			$passerr = "password is required";
+		}
 		
 		
 		if(!empty($email) && !empty($password)){
@@ -93,7 +97,7 @@ if(isset($_POST["login"])){
 				
 			
 	
-	}
+		}
 
 
 	
