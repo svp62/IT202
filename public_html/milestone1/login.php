@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		//$password = $_POST["password"];
 		//$email = $_POST["email"];
 		
-		if(empty($email)){
+		if(empty($_POST["email"])){
 			
 			$emailerr = "Email required";
 			
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		} else {
 			$email = test_input($_POST["email"]);
 		}
-		if(empty($password)){
+		if(empty($_POST["password"])){
 			
 			$passerr = "Password required";
 		} else {
