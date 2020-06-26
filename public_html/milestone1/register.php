@@ -87,7 +87,7 @@ if(isset($_POST["register"])){
 	</label><br><br><br>
 	
 	<label for="cp">Confirm Password
-	<input type="password" id="cp" name="cpassword" required />
+	<input type="password" id="cp" name="cpassword" />
 	<span class="error" id="cp">* <?php echo $passerr1;?></span>
 	</label><br><br><br>
 	
