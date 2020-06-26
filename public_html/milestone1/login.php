@@ -29,20 +29,30 @@ $emailerr = $passerr = "";
 
 if(isset($_POST["login"])){
 	
-		$password = $_POST["password"];
-		$email = $_POST["email"];
+		//$password = $_POST["password"];
+		//$email = $_POST["email"];
 		
-		if(empty($email) || empty($password)){
+		if(empty($email)){
 			
 			$emailerr = "Email required";
+			
+			
+		}
+		else {
+			$email = $_POST["email"];
+		}
+		if(empty($password)){
+			
 			$passerr = "Password required";
+		}
+		else{
+			$password = $_POST["password"];
 			
 		}
 		
-		
 		//if(!empty($email) && !empty($password))
 		
-		else{
+		if(!empty($email) && !empty($password)){
 	
 		
 					$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
