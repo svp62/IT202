@@ -3,22 +3,7 @@ include("header.php");
 
 ?>
 
-<h1>  </h1>
-<h2>Please Login here with your existing account.</h2>
 
-<span class="error">* required field</span>
-<form method="POST">
-	<label for="email">Email
-	<input type="email" id="email" name="email" />
-	<span class="error" id="email">* <?php echo $emailerr;?></span>
-	</label><br><br>
-	
-	<label for="p">Password
-	<input type="password" id="p" name="password" />
-	<span class="error" id="p">* <?php echo $passerr;?></span>
-	</label><br><br><br>
-	<input type="submit" name="login" value="Login"/>
-</form>
 
 
 <?php
@@ -112,4 +97,23 @@ if(isset($_POST["login"])) {
 
 
 ?>
+
+
+
+<h1>  </h1>
+<h2>Please Login here with your existing account.</h2>
+
+<span class="error">* required field</span>
+<form method="POST">
+	<label for="email">Email
+	<input type="email" id="email" name="email" />
+	<span class="error" id="email">* <?php echo $emailerr;?></span>
+	</label><br><br>
+	
+	<label for="p">Password
+	<input type="password" id="p" name="password" />
+	<span class="error" id="p">* <?php echo $passerr;?></span>
+	</label><br><br><br>
+	<input type="submit" name="login" value="Login"/>
+</form>
 
