@@ -72,7 +72,7 @@ if(isset($_POST["register"])){
 
 <h1>  </h1>
 <h2>Please Register here. </h2>
-
+<div>
 <span class="error">* required field</span>
 <form method="POST">
 
@@ -93,3 +93,4 @@ if(isset($_POST["register"])){
 	
 	<input type="submit" name="register" value="Register"/>
 </form>
+</div>

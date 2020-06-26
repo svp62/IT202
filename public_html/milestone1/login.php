@@ -103,6 +103,7 @@ if(isset($_POST["login"])) {
 <h1>  </h1>
 <h2>Please Login here with your existing account.</h2>
 
+<div>
 <span class="error">* required field</span>
 <form method="POST">
 	<label for="email">Email
@@ -116,4 +117,4 @@ if(isset($_POST["login"])) {
 	</label><br><br><br>
 	<input type="submit" name="login" value="Login"/>
 </form>
-
+</div>
