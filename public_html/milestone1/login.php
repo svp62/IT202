@@ -10,12 +10,12 @@ include("header.php");
 <form method="POST">
 	<label for="email">Email
 	<input type="email" id="email" name="email" />
-	<span class="error">* </span>
+	<span class="error" id="email">* <?php echo $emailerr;?></span>
 	</label><br><br>
 	
 	<label for="p">Password
 	<input type="password" id="p" name="password" />
-	<span class="error">* </span>
+	<span class="error" id="p">* <?php echo $passerr;?></span>
 	</label><br><br><br>
 	<input type="submit" name="login" value="Login"/>
 </form>
@@ -34,7 +34,7 @@ if(isset($_POST["login"])) {
 		
 		if(empty($_POST["email"])){
 			
-			echo "Email required";
+			$emailerr = "Email required";
 			
 			
 		} else {
@@ -42,7 +42,7 @@ if(isset($_POST["login"])) {
 		}
 		if(empty($_POST["password"])){
 			
-			echo "Password required";
+			$passerr = "Password required";
 		} else {
 			$password = $_POST["password"];
 			
