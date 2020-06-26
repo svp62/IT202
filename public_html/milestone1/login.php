@@ -32,12 +32,17 @@ if(isset($_POST["login"])){
 		$password = $_POST["password"];
 		$email = $_POST["email"];
 		
+		if(empty($email) || empty($password)){
+			
+			$emailerr = "Email required";
+			$passerr = "Password required";
+			
+		}
 		
 		
+		//if(!empty($email) && !empty($password))
 		
-		
-		
-		if(!empty($email) && !empty($password)){
+		else{
 	
 		
 					$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
@@ -87,11 +92,7 @@ if(isset($_POST["login"])){
 	
 		}
 		
-		else{
-			
-			$emailerr = "Email is required";
-			$passerr = "password is required";
-		}
+		
 
 
 	
