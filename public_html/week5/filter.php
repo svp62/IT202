@@ -47,6 +47,8 @@ if(isset($filter)) {
         <?php foreach($results as $row):?>
             <li>
                 <?php echo get($row, "title")?>
+			</li>
+			<li>
                 <?php echo get($row, "description");?>
                 <!--<a href="delete.php?thingId=<?php echo get($row, "id");?>">Delete</a> -->
             </li>
