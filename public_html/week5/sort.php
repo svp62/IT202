@@ -15,19 +15,17 @@ if(isset($_POST["filter"])){
 <form method="POST">
 	<div>
     
-    <input type="submit" name="filter" value="Ascending"/>
-	<input type="submit" name="filter" value="Descending"/>
+    <button type="submit" name="asc_sort" id="asc_sort" class="button" value="1">Sort</button>
 	</div>
 </form>
 <?php
-if(isset($filter)) {
 
-    require("functions.php");
-    
-	$query = file_get_contents("sort_table.sql");
-	
-    if (isset($query) && !empty($query)) {
-        try {
+if(isset($_POST['asc_sort']) && !empty($_POST['asc_sort']) && $_POST['asc_sort']==1)
+{
+     $query = "SELECT * FROM Survey ORDER BY title ASC";
+	 
+	 
+	 try {
             $stmt = getDB()->prepare($query);
             
             $stmt->execute([":filter"=>$filter]);
@@ -36,9 +34,26 @@ if(isset($filter)) {
         } catch (Exception $e) {
             echo $e->getMessage();
         }
-    }
+
+}else{
+
+    $query = "SELECT * FROM Survey ORDER BY title DESC";
+	
+	try {
+            $stmt = getDB()->prepare($query);
+            
+            $stmt->execute([":filter"=>$filter]);
+            
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
 }
+
+echo $query;
+
 ?>
+
 
 
 <?php if(isset($results) && count($results) > 0):?>
