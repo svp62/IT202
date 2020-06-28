@@ -72,5 +72,10 @@ if(isset($_POST['dec_sort']) && !empty($_POST['dec_sort']) && $_POST['dec_sort']
         <?php endforeach;?>
     </ul>
 <?php else:?>
-    <p>we don't have any results.</p>
+    <p>Click the buttons to sort in ascending order or descending order.</p>
+			<li>
+                <?php echo get($row, "title")?>
+                <?php echo get($row, "description");?>
+                
+            </li>
 <?php endif;?>
