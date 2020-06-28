@@ -1,1 +1,0 @@
-SELECT * FROM Survey WHERE title ORDER BY DESC

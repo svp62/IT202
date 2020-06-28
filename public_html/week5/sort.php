@@ -15,7 +15,8 @@ if(isset($_POST["filter"])){
 <form method="POST">
 	<div>
     
-    <button type="submit" name="asc_sort" id="asc_sort" class="button" value="1">Sort</button>
+    <button type="submit" name="asc_sort" id="asc_sort" class="button" value="1">Ascending</button>
+	<button type="submit" name="dec_sort" id="dec_sort" class="button" value="0">Descending</button>
 	</div>
 </form>
 <?php
@@ -35,14 +36,15 @@ if(isset($_POST['asc_sort']) && !empty($_POST['asc_sort']) && $_POST['asc_sort']
             echo $e->getMessage();
         }
 
-}else{
+}
+if(isset($_POST['dec_sort']) && !empty($_POST['dec_sort']) && $_POST['dec_sort']==0){
 
     $query = "SELECT * FROM Survey ORDER BY title DESC";
 	
 	try {
             $stmt = getDB()->prepare($query);
             
-            $stmt->execute([":filter"=>$filter]);
+            $stmt->execute([":dec_sort"=>$filter]);
             
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
@@ -50,7 +52,7 @@ if(isset($_POST['asc_sort']) && !empty($_POST['asc_sort']) && $_POST['asc_sort']
         }
 }
 
-echo $query;
+
 
 ?>
 
