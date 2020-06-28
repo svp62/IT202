@@ -25,8 +25,8 @@ if(isset($filter)) {
     require("functions.php");
     
 	$query = file_get_contents("sort_table.sql");
-	$isAsc = isset($_GET['order'])? (bool) $_GET['order']: 1;
-    if ($isAsc) {
+	
+    if (isset($query) && !empty($query)) {
         try {
             $stmt = getDB()->prepare($query);
             

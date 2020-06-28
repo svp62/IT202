@@ -1,1 +1,1 @@
-SELECT * FROM Survey ORDER BY title .($isAsc?"ASC":"DESC").
+SELECT * FROM Survey WHERE title ORDER BY DESC
