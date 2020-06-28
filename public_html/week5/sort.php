@@ -15,8 +15,8 @@ if(isset($_POST["filter"])){
 <form method="POST">
 	<div>
     
-    <input type="submit" value="Ascending"/>
-	<input type="submit" value="Descending"/>
+    <input type="submit" name="filter" value="Ascending"/>
+	<input type="submit" name="filter" value="Descending"/>
 	</div>
 </form>
 <?php
@@ -24,8 +24,9 @@ if(isset($filter)) {
 
     require("functions.php");
     
-	$query = file_get_contents("filter_table.sql");
-    if (isset($query) && !empty($query)) {
+	$query = file_get_contents("sort_table.sql");
+	$isAsc = isset($_GET['order'])? (bool) $_GET['order']: 1;
+    if ($isAsc) {
         try {
             $stmt = getDB()->prepare($query);
             
@@ -49,7 +50,7 @@ if(isset($filter)) {
                 <?php echo get($row, "title")?>
 			
                 <?php echo get($row, "description");?>
-                <!--<a href="delete.php?thingId=<?php echo get($row, "id");?>">Delete</a> -->
+                
             </li>
         <?php endforeach;?>
     </ul>
