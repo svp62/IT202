@@ -1,6 +1,6 @@
 
 <?php
-include("styles.php");
+include("styles.css");
 
 ?>
 
