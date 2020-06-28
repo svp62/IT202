@@ -19,7 +19,7 @@ if(isset($_POST["filter"])){
 	</div>
 </form>
 <?php
-
+require("functions.php");
 if(isset($_POST['asc_sort']) && !empty($_POST['asc_sort']) && $_POST['asc_sort']==1)
 {
      $query = "SELECT * FROM Survey ORDER BY title ASC";
@@ -28,7 +28,7 @@ if(isset($_POST['asc_sort']) && !empty($_POST['asc_sort']) && $_POST['asc_sort']
 	 try {
             $stmt = getDB()->prepare($query);
             
-            $stmt->execute([":filter"=>$filter]);
+            $stmt->execute([":asc_sort"=>$filter]);
             
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
@@ -56,7 +56,7 @@ echo $query;
 
 
 
-<?php if(isset($results) && count($results) > 0):?>
+<?php if(isset($results)):?>
     <p>we have results below.</p>
     <ul>
         
