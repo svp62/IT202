@@ -16,7 +16,7 @@ if(isset($_POST["filter"])){
 	<div>
     
     <button type="submit" name="asc_sort" id="asc_sort" class="button" value="1">Ascending</button>
-	<button type="submit" name="dec_sort" id="dec_sort" class="button" value="0">Descending</button>
+	<button type="submit" name="dec_sort" id="dec_sort" class="button" value="1">Descending</button>
 	</div>
 </form>
 <?php
@@ -37,7 +37,7 @@ if(isset($_POST['asc_sort']) && !empty($_POST['asc_sort']) && $_POST['asc_sort']
         }
 
 }
-if(isset($_POST['dec_sort']) && !empty($_POST['dec_sort']) && $_POST['dec_sort']==0){
+if(isset($_POST['dec_sort']) && !empty($_POST['dec_sort']) && $_POST['dec_sort']==1){
 
     $query = "SELECT * FROM Survey ORDER BY title DESC";
 	
