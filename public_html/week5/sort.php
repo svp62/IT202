@@ -68,7 +68,7 @@ if(isset($filter)) {
         try {
             $stmt = getDB()->prepare($query);
             
-            //$stmt->execute([":filter"=>$filter]);
+            $stmt->execute([":filter"=>$filter]);
             
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
@@ -79,7 +79,7 @@ if(isset($filter)) {
 ?>
 
 
-<?php if(isset($results) && count($results) > 0):?>
+<?php if(isset($results)):?>
     <p>we have sorted results below.</p>
     <ul>
         
