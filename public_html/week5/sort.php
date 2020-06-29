@@ -68,7 +68,7 @@ if(isset($filter)) {
         try {
             $stmt = getDB()->prepare($query);
             
-            $stmt->execute([":filter"=>$filter]);
+            //$stmt->execute([":filter"=>$filter]);
             
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
