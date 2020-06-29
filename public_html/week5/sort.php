@@ -10,6 +10,7 @@ include("styles.css");
 $filter = "";
 if(isset($_POST["filter"])){
     $filter = $_POST["filter"];
+	echo $filter;
 }
 ?>
 <form method="POST">
@@ -58,25 +59,7 @@ if(isset($_POST['dec_sort']) && !empty($_POST['dec_sort']) && $_POST['dec_sort']
 
 
 
-<?php
-if(isset($filter)) {
 
-    require("functions.php");
-    
-	$query = file_get_contents("filter_table.sql");
-    if (isset($query) && !empty($query)) {
-        try {
-            $stmt = getDB()->prepare($query);
-            
-            $stmt->execute([":filter"=>$filter]);
-            
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
-    }
-}
-?>
 
 
 <?php if(isset($results)):?>
