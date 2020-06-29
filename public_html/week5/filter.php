@@ -49,7 +49,7 @@ if(isset($filter)) {
                 <?php echo get($row, "title")?>
 			
                 <?php echo get($row, "description");?>
-                <!--<a href="delete.php?thingId=<?php echo get($row, "id");?>">Delete</a> -->
+                
             </li>
         <?php endforeach;?>
     </ul>

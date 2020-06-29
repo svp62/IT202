@@ -58,8 +58,29 @@ if(isset($_POST['dec_sort']) && !empty($_POST['dec_sort']) && $_POST['dec_sort']
 
 
 
-<?php if(isset($results)):?>
-    <p>we have results below.</p>
+<?php
+if(isset($filter)) {
+
+    require("functions.php");
+    
+	$query = file_get_contents("filter_table.sql");
+    if (isset($query) && !empty($query)) {
+        try {
+            $stmt = getDB()->prepare($query);
+            
+            $stmt->execute([":filter"=>$filter]);
+            
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+}
+?>
+
+
+<?php if(isset($results) && count($results) > 0):?>
+    <p>we have sorted results below.</p>
     <ul>
         
         <?php foreach($results as $row):?>
@@ -73,9 +94,4 @@ if(isset($_POST['dec_sort']) && !empty($_POST['dec_sort']) && $_POST['dec_sort']
     </ul>
 <?php else:?>
     <p>Click the buttons to sort in ascending order or descending order.</p>
-			<li>
-                <?php echo get($row, "title")?>
-                <?php echo get($row, "description");?>
-                
-            </li>
 <?php endif;?>
