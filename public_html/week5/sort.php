@@ -8,11 +8,24 @@ include("styles.css");
 
 <?php
 require("functions.php");
-require("filter_table.sql");
+$query = file_get_contents("filter_table.sql");
+    
 $filter = "";
 if(isset($_POST["filter"])){
     $filter = $_POST["filter"];
-	echo $filter;
+	if (isset($query)) {
+        try {
+            $stmt = getDB()->prepare($query);
+            
+            $stmt->execute([":filter"=>$filter]);
+            
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+		echo $results;
+	}
 }
 ?>
 <form method="POST">
