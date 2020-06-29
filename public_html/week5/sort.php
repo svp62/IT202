@@ -7,6 +7,8 @@ include("styles.css");
 
 
 <?php
+require("functions.php");
+require("filter_table.sql");
 $filter = "";
 if(isset($_POST["filter"])){
     $filter = $_POST["filter"];
