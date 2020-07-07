@@ -23,7 +23,7 @@ include("header.php");
 
 
 <form method="POST">
-	
+	<br><br>
 	<input type="submit" name="login" value="GET STARTED"/>
 </form>
 

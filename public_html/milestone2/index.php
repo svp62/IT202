@@ -23,7 +23,7 @@ echo " THIS IS A SURVEY PAGE ";
 
 
 <form method="POST">
-	
+	<br><br>
 	<input type="submit" name="login" value="GET STARTED"/>
 </form>
 
