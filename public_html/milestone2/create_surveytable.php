@@ -28,13 +28,13 @@ $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 try{
 	$db = new PDO($connection_string, $dbuser, $dbpass);
 	$stmt = $db->prepare("CREATE TABLE `Questions` (
-				`id` int not null,
+				`quesid` int auto_increment not null,
 				`question1` varchar(150) NOT NULL,
 				`question2` varchar(150) NOT NULL,
 				`question3` varchar(150) NOT NULL,
 				`question4` varchar(150),
-				`question5` varchar(150)
-				
+				`question5` varchar(150),
+				PRIMARY KEY (`quesid`)
 				
 				) CHARACTER SET utf8 COLLATE utf8_general_ci");
 	$r = $stmt->execute();
