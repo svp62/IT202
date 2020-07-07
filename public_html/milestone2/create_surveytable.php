@@ -29,10 +29,13 @@ try{
 	$db = new PDO($connection_string, $dbuser, $dbpass);
 	$stmt = $db->prepare("CREATE TABLE `Surveys_questions` (
 				`id` int not null,
-				`question` varchar(32) NOT NULL,
+				`question1` varchar(32) NOT NULL,
+				`question2` varchar(32) NOT NULL,
+				`question3` varchar(32) NOT NULL,
+				`question4` varchar(32),
+				`question5` varchar(32),
 				
 				
-				PRIMARY KEY (`question`)
 				) CHARACTER SET utf8 COLLATE utf8_general_ci");
 	$r = $stmt->execute();
 	echo var_export($stmt->errorInfo(), true);
