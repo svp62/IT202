@@ -101,7 +101,7 @@ if(isset($_POST["created"])){
             else{
                 
                 if ($result){
-                    echo "Successfully created new survey for: " . $title;
+                    echo "Successfully created new survey for: ";
                 }
                 else{
                     echo "Error creating data";
