@@ -27,13 +27,13 @@ require("config.php");
 $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 try{
 	$db = new PDO($connection_string, $dbuser, $dbpass);
-	$stmt = $db->prepare("CREATE TABLE `Surveys_questions` (
+	$stmt = $db->prepare("CREATE TABLE `Questions` (
 				`id` int not null,
-				`question1` varchar(32) NOT NULL,
-				`question2` varchar(32) NOT NULL,
-				`question3` varchar(32) NOT NULL,
-				`question4` varchar(32),
-				`question5` varchar(32)
+				`question1` varchar(150) NOT NULL,
+				`question2` varchar(150) NOT NULL,
+				`question3` varchar(150) NOT NULL,
+				`question4` varchar(150),
+				`question5` varchar(150)
 				
 				
 				) CHARACTER SET utf8 COLLATE utf8_general_ci");

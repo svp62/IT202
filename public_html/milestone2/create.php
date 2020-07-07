@@ -83,7 +83,7 @@ if(isset($_POST["created"])){
 		
         try{
             $db = getDB();
-		    $stmt = $db->prepare("INSERT INTO Surveys_questions (question1, question2, question3, question4, question5) VALUES (:question1, :question2, :question3, :question4, :question5)");
+		    $stmt = $db->prepare("INSERT INTO Questions (question1, question2, question3, question4, question5) VALUES (:question1, :question2, :question3, :question4, :question5)");
             $result = $stmt->execute(array(
                 ":question1" => $question1,
                 ":question2" => $question2,
@@ -135,7 +135,7 @@ if(isset($_POST["created"])){
 	</label><br><br>
 	<label for="question3">Question 3
 	<input type="text" id="question3" name="question3" />
-	<span class="error" id="question2">* <?php echo $queserr;?></span>
+	<span class="error" id="question3">* <?php echo $queserr;?></span>
 	</label><br><br>
 	<label for="question4">Question 4
 	<input type="text" id="question4" name="question4" />
