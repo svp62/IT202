@@ -16,7 +16,7 @@ if(isset($_POST["create"])){
            
 			$db = new PDO($connection_string, $dbuser, $dbpass);
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = "DROP TABLE Survey";
+            $stmt = "DROP TABLE Surveys_questions";
 			$db->exec($stmt);
 		echo"Record deleted successfully";
             
