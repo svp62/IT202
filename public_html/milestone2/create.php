@@ -99,7 +99,7 @@ if(isset($_POST["created"])){
             else{
                 
                 if ($result){
-                    echo "Successfully created new data: " . $title;
+                    echo "Successfully created new survey for: " . $title;
                 }
                 else{
                     echo "Error creating data";
@@ -107,7 +107,7 @@ if(isset($_POST["created"])){
             }
         }
         catch (Exception $e){
-            echo $e->getMessage();
+            echo "error ayi " .$e->getMessage();
         }
 	}
     
