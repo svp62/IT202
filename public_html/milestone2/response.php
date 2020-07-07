@@ -7,14 +7,15 @@ include("header.php");
     <label for="question">Do you want to create a survey?
 	<input type="submit" name="yes1" value="YES" />
 	
-	</label>
+	</label><br><br>
+	
 	<label for="question">Do you want to take an existing survey?
 	<input type="submit" name="yes" value="YES" />
 	
-	</label>
+	</label><br><br>
     
 </form>
-<div>
+</div>
 
 <?php
 

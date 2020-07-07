@@ -18,7 +18,7 @@ include("header.php");
 	</label>
     <input type="submit" name="created" value="Create Survey"/>
 </form>
-<div>
+</div>
 <?php
 if(isset($_POST["created"])){
     $title = $_POST["title"];
