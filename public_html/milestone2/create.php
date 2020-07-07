@@ -73,7 +73,7 @@ if(isset($_POST["created"])){
             }
         }
         catch (Exception $e){
-            echo $e->getMessage();
+            echo "uper error ayi " . $e->getMessage();
         }
     }
 	
@@ -107,7 +107,7 @@ if(isset($_POST["created"])){
             }
         }
         catch (Exception $e){
-            echo "error ayi " .$e->getMessage();
+            echo "error ayi " . $e->getMessage();
         }
 	}
     
