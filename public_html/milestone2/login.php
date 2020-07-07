@@ -63,7 +63,7 @@ if(isset($_POST["login"])) {
 									);
 									echo var_export($_SESSION, true);
 									//echo "<a href='home.php'>Go to home page</a>";
-									header("Location: home.php");
+									header("Location: create.php");
 								}
 								else{
 									echo "<div>Not a valid password!</div>";
