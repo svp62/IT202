@@ -34,9 +34,9 @@ if(isset($_POST["created"])){
 	if(empty($_POST["question1"]) && empty($_POST["question2"]) && empty($_POST["question3"])){
 			
 			$queserr = "Question needed";
-			echo"-------------------------------------------------";
-			echo "YOU ARE REQUIRED TO ADD 3 QUESTION TO SURVEY.";
-			echo"-------------------------------------------------";
+			echo"\n-------------------------------------------------\n";
+			echo "YOU ARE REQUIRED TO ADD 3 QUESTION TO SURVEY.\n";
+			echo"-------------------------------------------------\n";
 		}
 		else{
 			$question1 = $_POST["question1"];
