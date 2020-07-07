@@ -10,9 +10,8 @@ include("header.php");
 if(isset($_POST["created"])){
     
     
-    $visibility = $_POST["visibility"];
-	$question4 = $_POST["question4"];
-	$question5 = $_POST["question5"];
+    
+	
 	
 	if(empty($_POST["title"])){
 			
@@ -48,7 +47,7 @@ if(isset($_POST["created"])){
     if(!empty($title) && !empty($description) && !empty($visibility)){
         
 		require("functions.php");
-		
+		$visibility = $_POST["visibility"];
         try{
             $db = getDB();
             $stmt = $db->prepare("INSERT INTO Survey (title, description, visibility) VALUES (:title, :description, :visibility)");
@@ -81,6 +80,9 @@ if(isset($_POST["created"])){
 		
 		require("functions.php");
 		
+		$question4 = $_POST["question4"];
+		$question5 = $_POST["question5"];
+		
         try{
             $db = getDB();
 		    $stmt = $db->prepare("INSERT INTO Questions (question1, question2, question3, question4, question5) VALUES (:question1, :question2, :question3, :question4, :question5)");
@@ -107,7 +109,7 @@ if(isset($_POST["created"])){
             }
         }
         catch (Exception $e){
-            echo "error ayi " . $e->getMessage();
+            echo "niche error ayi " . $e->getMessage();
         }
 	}
     
