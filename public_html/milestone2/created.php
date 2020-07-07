@@ -2,6 +2,12 @@
 include("header.php");
 
 ?>
+<div>
+<form method="POST">
+    
+    <input type="submit" name="create" value="DELETE TABLE"/>
+</form>
+</div>
 <?php
 if(isset($_POST["create"])){
 	
