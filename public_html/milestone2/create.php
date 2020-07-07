@@ -9,10 +9,6 @@ include("header.php");
 <?php
 if(isset($_POST["created"])){
     
-    
-    
-	
-	
 	if(empty($_POST["title"])){
 			
 			$titleerr = "Title needed";
@@ -55,18 +51,23 @@ if(isset($_POST["created"])){
 		}
 	
 	
-    if(!empty($title) && !empty($description) && !empty($visibility)){
+    if(!empty($title) && !empty($description) && !empty($visibility) && !empty($question1) && !empty($question2) && !empty($question3)){
         
-		//require("functions.php");
+		require("functions.php");
 		
-		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+		//$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
-            //$db = getDB();
-			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $db->prepare("INSERT INTO Survey (title, description, visibility) VALUES (:title, :description, :visibility)");
+            $db = getDB();
+			//$db = new PDO($connection_string, $dbuser, $dbpass);
+            $stmt = $db->prepare("INSERT INTO Survey (title, description, question1, question2, question3, question4, question5, visibility) VALUES (:title, :description, :question1, :question2, :question3, :question4, :question5, :visibility)");
             $result = $stmt->execute(array(
                 ":title" => $title,
                 ":description" => $description,
+				":question1" => $question1,
+                ":question2" => $question2,
+				":question3" => $question3,
+				":question4" => $question4,
+				":question5" => $question5
                 ":visibility" => $visibility
             ));
 			
@@ -89,42 +90,7 @@ if(isset($_POST["created"])){
         }
     }
 	
-	if (!empty($question1) && !empty($question2) && !empty($question3)){
-		
-		//require("functions.php");
-		
-		
-		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
-        try{
-            //$db = getDB();
-			$db = new PDO($connection_string, $dbuser, $dbpass);
-		    $stmt = $db->prepare("INSERT INTO Questions (question1, question2, question3, question4, question5) VALUES (:question1, :question2, :question3, :question4, :question5)");
-            $result = $stmt->execute(array(
-                ":question1" => $question1,
-                ":question2" => $question2,
-				":question3" => $question3,
-				":question4" => $question4,
-				":question5" => $question5
-            ));
-			
-			$e = $stmt->errorInfo();
-            if($e[0] != "00000"){
-                echo var_export($e, true);
-            }
-            else{
-                
-                if ($result){
-                    echo "Successfully created new survey for: " . $title;
-                }
-                else{
-                    echo "Error creating data";
-                }
-            }
-        }
-        catch (Exception $e){
-            echo "niche error ayi " . $e->getMessage();
-        }
-	}
+	
     
 }
 ?>
