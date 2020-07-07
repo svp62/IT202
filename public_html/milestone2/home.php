@@ -10,10 +10,20 @@ include("header.php");
 
 <h1>     </h1>
 
+<style>
 
+a {
+  
+  
+  text-align: right;
+ 
+  
+}
+
+</style>
 <?php
 //session_start();
-echo "Welcome to the survey page, " . $_SESSION["user"]["email"];
+//echo "Welcome to the survey page, " . $_SESSION["user"]["email"];
 //width="600" height="400"
 
 ?>
@@ -21,7 +31,7 @@ echo "Welcome to the survey page, " . $_SESSION["user"]["email"];
 <h2>  </h2>
 
 <a target="_blank" href="homep.jpg">
-      <img src="homep.jpg" >
+      <img src="homep.jpg" width="600" height="400">
     </a>
 
     
