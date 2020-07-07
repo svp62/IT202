@@ -5,8 +5,7 @@ include("header.php");
 
 <?php
 if(isset($_POST["created"])){
-	require("functions.php");
-    
+	
 	if(empty($_POST["title"])){
 			
 			$titleerr = "Title needed";
@@ -53,10 +52,10 @@ if(isset($_POST["created"])){
         
 		//require("functions.php");
 		
-		//$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
-            $db = getDB();
-			//$db = new PDO($connection_string, $dbuser, $dbpass);
+            //$db = getDB();
+			$db = new PDO($connection_string, $dbuser, $dbpass);
             $stmt = $db->prepare("INSERT INTO Survey (title, description, question1, question2, question3, question4, question5, visibility) VALUES (:title, :description, :question1, :question2, :question3, :question4, :question5, :visibility)");
             $result = $stmt->execute(array(
                 ":title" => $title,
