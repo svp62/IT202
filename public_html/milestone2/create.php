@@ -80,12 +80,13 @@ if(isset($_POST["created"])){
 	
 	if (!empty($question1) && !empty($question2) && !empty($question3)){
 		
-		require("functions.php");
+		//require("functions.php");
 		
 		
-		
+		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
-            $db = getDB();
+            //$db = getDB();
+			$db = new PDO($connection_string, $dbuser, $dbpass);
 		    $stmt = $db->prepare("INSERT INTO Questions (question1, question2, question3, question4, question5) VALUES (:question1, :question2, :question3, :question4, :question5)");
             $result = $stmt->execute(array(
                 ":question1" => $question1,
