@@ -1,3 +1,11 @@
+<?php
+include("header.php");
+
+?>
+
+
+
+<div>
 <form method="POST">
     <label for="title">Title
 	<input type="text" id="title" name="title" />
@@ -10,6 +18,7 @@
 	</label>
     <input type="submit" name="created" value="Create Survey"/>
 </form>
+<div>
 <?php
 if(isset($_POST["created"])){
     $title = $_POST["title"];
