@@ -33,7 +33,7 @@ try{
 				`question2` varchar(32) NOT NULL,
 				`question3` varchar(32) NOT NULL,
 				`question4` varchar(32),
-				`question5` varchar(32),
+				`question5` varchar(32)
 				
 				
 				) CHARACTER SET utf8 COLLATE utf8_general_ci");
