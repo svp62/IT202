@@ -89,7 +89,7 @@ if(isset($_POST["created"])){
                 ":question2" => $question2,
 				":question3" => $question3,
 				":question4" => $question4,
-				":question5" => $question5,
+				":question5" => $question5
             ));
 			
 			$e = $stmt->errorInfo();
