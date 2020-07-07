@@ -6,18 +6,7 @@ include("header.php");
 
 ?>
 
-<style>
 
-body {
-	background-color: lightgrey;
-	background-image: homep.jpg;
-	text-align: center;
-	font-size: 32px
-	font-family: "Times New Roman", Times, serif;
-	
-}
-
-</style>
 
 <h1>     </h1>
 
@@ -31,6 +20,13 @@ echo "Welcome to the survey homepage, " . $_SESSION["user"]["email"];
 <h2>Please Login with your existing account or register to start taking surveys.</h2>
 
 <div>
+
+
+    <a target="_blank" href="homep.jpg">
+      <img src="homep.jpg" width="600" height="400">
+    </a>
+    
+
 <span class="error">* required field</span>
 <form method="POST">
 	<label for="email">Email
