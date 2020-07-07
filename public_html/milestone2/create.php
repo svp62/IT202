@@ -45,7 +45,7 @@ if(isset($_POST["created"])){
 		}
 	
 	
-    if(!empty($title) && !empty($description) && !empty($visibility) && !empty($question1) && !empty($question2) && !empty($question3)){
+    if(!empty($title) && !empty($description) && !empty($visibility)){
         
 		require("functions.php");
 		
@@ -57,14 +57,7 @@ if(isset($_POST["created"])){
                 ":description" => $description,
                 ":visibility" => $visibility
             ));
-			$stmt = $db->prepare("INSERT INTO Surveys_questions (question) VALUES (:question)");
-            $result = $stmt->execute(array(
-                ":question" => $question1,
-                ":question" => $question2,
-				":question" => $question3,
-				":question" => $question4,
-				":question" => $question5,
-            ));
+			
             $e = $stmt->errorInfo();
             if($e[0] != "00000"){
                 echo var_export($e, true);
@@ -83,6 +76,40 @@ if(isset($_POST["created"])){
             echo $e->getMessage();
         }
     }
+	
+	if (!empty($question1) && !empty($question2) && !empty($question3)){
+		
+		require("functions.php");
+		
+        try{
+            $db = getDB();
+		    $stmt = $db->prepare("INSERT INTO Surveys_questions (question) VALUES (:question)");
+            $result = $stmt->execute(array(
+                ":question" => $question1,
+                ":question" => $question2,
+				":question" => $question3,
+				":question" => $question4,
+				":question" => $question5,
+            ));
+			
+			$e = $stmt->errorInfo();
+            if($e[0] != "00000"){
+                echo var_export($e, true);
+            }
+            else{
+                
+                if ($result){
+                    echo "Successfully created new data: " . $title;
+                }
+                else{
+                    echo "Error creating data";
+                }
+            }
+        }
+        catch (Exception $e){
+            echo $e->getMessage();
+        }
+	}
     
 }
 ?>
