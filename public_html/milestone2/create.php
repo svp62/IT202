@@ -3,11 +3,9 @@ include("header.php");
 
 ?>
 
-
-
-
 <?php
 if(isset($_POST["created"])){
+	require("functions.php");
     
 	if(empty($_POST["title"])){
 			
@@ -53,7 +51,7 @@ if(isset($_POST["created"])){
 	
     if(!empty($title) && !empty($description) && !empty($visibility) && !empty($question1) && !empty($question2) && !empty($question3)){
         
-		require("functions.php");
+		//require("functions.php");
 		
 		//$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
@@ -78,7 +76,7 @@ if(isset($_POST["created"])){
             else{
                 
                 if ($result){
-                    echo "Successfully created new data: " . $title;
+                    echo "Successfully created new survey for: " . $title;
                 }
                 else{
                     echo "Error creating data";
