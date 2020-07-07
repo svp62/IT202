@@ -9,13 +9,13 @@ include("header.php");
 <form method="POST">
     <label for="title">Title
 	<input type="text" id="title" name="title" />
-	</label>
+	</label><br><br>
 	<label for="description">Description
 	<input type="text" id="description" name="description" />
-	</label>
+	</label><br><br>
 	<label for="visibility">Visibility
 	<input type="number" id="visibility" name="visibility" />
-	</label>
+	</label><br><br>
     <input type="submit" name="created" value="Create Survey"/>
 </form>
 </div>
