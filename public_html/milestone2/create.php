@@ -75,7 +75,9 @@ if(isset($_POST["created"])){
             else{
                 
                 if ($result){
-                    echo "Successfully created new survey for: " . $title;
+					echo"<br>---------------------------------------------------------------------------------<br>";
+                    echo "Successfully created new survey for: " . $title "<br>";
+					echo"---------------------------------------------------------------------------------<br>";
                 }
                 else{
                     echo "Error creating data";
@@ -83,7 +85,7 @@ if(isset($_POST["created"])){
             }
         }
         catch (Exception $e){
-            echo "uper error ayi " . $e->getMessage();
+            echo $e->getMessage();
         }
     }
 	
