@@ -18,7 +18,7 @@ else{
     echo "ID not provided in url. Please put '?idnum=(id number where you want to update data)' at the end of URL. ";
 }
 ?>
-
+<div>
 <form method="POST">
     <label for="title">Title
 	<input type="text" id="title" name="title" value="<?php echo get($result, "title");?>"/>
@@ -31,7 +31,7 @@ else{
 	</label>
 	<input type="submit" name="delete" value="Delete Survey"/>
 </form>
-
+</div>
 <?php
 if(isset($_POST["delete"])){
     $title = $_POST["title"];
