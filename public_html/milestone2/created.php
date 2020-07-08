@@ -26,20 +26,7 @@ include("header.php");
 			 
             $e = $stmt->errorInfo();
 
-					foreach ($stmt as $row) {
-    
-						
-						echo "<br> Survey for: " . $row["title"];
-						
-						echo "<br> QUESTION 1: " . $row["question1"]; 
-						echo "<br> QUESTION 2: " . $row["question2"];
-						echo "<br> QUESTION 3: " . $row["question3"];
-						echo "<br> QUESTION 4: " . $row["question4"];
-						echo "<br> QUESTION 5: " . $row["question5"];
-						
-						 
-						
-						}
+					
                 
             
         }
