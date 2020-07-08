@@ -3,8 +3,8 @@ include("header.php");
 ?>
 
 <?php
-require("functions.php");
-$db = getDB();
+$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+$db = new PDO($connection_string, $dbuser, $dbpass);
 $idnum = -1;
 $result = array();
 
@@ -19,7 +19,7 @@ else{
 }
 
 ?>
-
+<div>
 <form method="POST">
     <label for="title">Title
 	<input type="text" id="title" name="title" value="<?php echo get($result, "title");?>"/>
@@ -53,6 +53,7 @@ else{
 	</label>
 	<input type="submit" name="updated" value="Update Survey"/>
 </form>
+</div>
 
 <?php
 if(isset($_POST["updated"])){
