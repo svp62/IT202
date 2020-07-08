@@ -15,10 +15,45 @@ if(isset($_POST["create"])){
         try{
            
 			
-            
+			$db = new PDO($connection_string, $dbuser, $dbpass);
+            $stmt = $db->prepare("SELECT * FROM Survey");
+            $stmt->execute(array(
+                ":title" => $title,
+                ":description" => $description,
+				":question1" => $question1,
+                ":question2" => $question2,
+				":question3" => $question3,
+				":question4" => $question4,
+				":question5" => $question5,
+                ":visibility" => $visibility
+            ));
+			
+            $e = $stmt->errorInfo();
+            if($e[0] != "00000"){
+                echo var_export($e, true);
+            }
+            else{
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+				
+				while($result=mysql_fetch_array($rs))
+				{
+				echo '<tr>
+				<td>'.$result["title"].'</td>
+				<td>'.$result["description"].'</td>
+				</tr>';
+				}
+                if ($result){
+					echo"<br>---------------------------------------------------------------------------------<br>";
+                    echo "Successfully created new survey for: " . $title;
+					echo"<br>---------------------------------------------------------------------------------<br>";
+                }
+                else{
+                    echo "Error creating data";
+                }
+            }
         }
         catch (Exception $e){
-            
+            echo $e->getMessage();
         }
 	
 	
