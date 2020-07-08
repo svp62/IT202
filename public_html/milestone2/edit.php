@@ -19,7 +19,7 @@ else{
 }
 
 ?>
-<div>
+
 <form method="POST">
     <label for="title">Title
 	<input type="text" id="title" name="title" value="<?php echo get($result, "title");?>"/>
@@ -53,7 +53,7 @@ else{
 	</label><br><br>
 	<input type="submit" name="updated" value="Update Survey"/>
 </form>
-</div>
+
 
 <?php
 if(isset($_POST["updated"])){
