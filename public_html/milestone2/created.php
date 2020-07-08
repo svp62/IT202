@@ -5,7 +5,7 @@ include("header.php");
 <div>
 <form method="POST">
     
-    <input type="submit" name="create" value="DELETE TABLE"/>
+    <input type="submit" name="create" value="SHOW ME OUTPUT"/>
 </form>
 </div>
 <?php
@@ -35,7 +35,7 @@ if(isset($_POST["create"])){
             else{
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 				
-				while($result=mysql_fetch_array($rs))
+				while($result=mysql_fetch_array($stmt))
 				{
 				echo '<tr>
 				<td>'.$result["title"].'</td>
