@@ -16,7 +16,8 @@ if(isset($_POST["create"])){
            
 			
 			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $db->prepare("SELECT * FROM Survey")->fetchAll();
+			$sql = "SELECT * FROM Survey";
+            $stmt = $db->query($sql);
 			//$stmt->execute();
 			//$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
