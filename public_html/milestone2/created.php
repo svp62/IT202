@@ -4,7 +4,7 @@ include("header.php");
 ?>
 <div>
 <form method="POST">
-    
+    <h1>Please choose one survey from the following options.</h1>
     <input type="radio" name="sephora" value="sephora">
 	<label for="sephora">SEPHORA</label><br>
 	<input type="radio" name="tony" value="tony">
@@ -28,15 +28,15 @@ include("header.php");
 
 					foreach ($stmt as $row) {
     
-						echo "<br> ID: " . $row["id"]; 
-						echo "<br> Title: " . $row["title"];
-						echo "<br> DESCRIPTION: " . $row["description"];
+						
+						echo "<br> Survey for: " . $row["title"];
+						
 						echo "<br> QUESTION 1: " . $row["question1"]; 
-						echo "<br> DQUESTION 2: " . $row["question2"];
+						echo "<br> QUESTION 2: " . $row["question2"];
 						echo "<br> QUESTION 3: " . $row["question3"];
 						echo "<br> QUESTION 4: " . $row["question4"];
 						echo "<br> QUESTION 5: " . $row["question5"];
-						echo "<br> VISIBILITY: " . $row["visibility"];
+						
 						 
 						
 						}
@@ -65,27 +65,35 @@ include("header.php");
 			
 			 
             $e = $stmt->errorInfo();
+		} 
 
-					foreach ($stmt as $row) {
-    
-						//echo "<br> ID: " . $row["id"]; 
-						echo "<br> Title: " . $row["title"];
-						//echo "<br> DESCRIPTION: " . $row["description"];
-						echo "<br> QUESTION 1: " . $row["question1"]; 
-						echo "<br> DQUESTION 2: " . $row["question2"];
-						echo "<br> QUESTION 3: " . $row["question3"];
-						echo "<br> QUESTION 4: " . $row["question4"];
-						echo "<br> QUESTION 5: " . $row["question5"];
-						//echo "<br> VISIBILITY: " . $row["visibility"];
-						 
-						
-						}
-                
-            
-        }
-        catch (Exception $e){
+catch (Exception $e){
             echo $e->getMessage();
         }
 
 				 }
-		  ?>
+?>
+					<?php foreach ($stmt as $row) { 
+    
+						 
+						echo "<br> Survey for: " . $row["title"];
+						?>
+						
+						<?php echo "<br> QUESTION 1: " . $row["question1"]; ?>
+						<input type="text" id="ques1" name="ques1"><br>
+						<?php echo "<br> QUESTION 2: " . $row["question2"]; ?>
+						<input type="text" id="ques2" name="ques2"><br>
+						<?php echo "<br> QUESTION 3: " . $row["question3"]; ?>
+						<input type="text" id="ques3" name="ques3"><br>
+						<?php echo "<br> QUESTION 4: " . $row["question4"]; ?>
+						<input type="text" id="ques4" name="ques4"><br>
+						<?php echo "<br> QUESTION 5: " . $row["question5"]; ?>
+						<input type="text" id="ques5" name="ques5"><br>
+						<input type="submit" value="Submit">
+						
+						 
+						
+						<?php } ?>
+                
+            
+        
