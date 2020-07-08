@@ -71,14 +71,14 @@ catch (Exception $e){
 						<input type="text" id="ans4" name="ans4"><br>
 						<?php echo "<br> QUESTION 5: " . $row["question5"]; ?>
 						<input type="text" id="ans5" name="ans5"><br>
-						<input type="submit" name="created" value="Submit">
+						<input type="submit" name="create" value="Submit"/>
 						
 						 
 						
 						<?php } ?>
 						
 <?php
-if(isset($_POST["created"])) { 
+if(isset($_POST["create"])) { 
 
 			$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 			$ans1 = $_POST["ans1"];
