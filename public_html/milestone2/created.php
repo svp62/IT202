@@ -25,7 +25,7 @@ if(isset($_POST["create"])){
             $e = $stmt->errorInfo();
             
                 
-                if ($result){
+                if ($result > 0){
 					// output data of each row
 					while($row = $result->fetch()) {
 						echo "<br> ID: " . $row["id"]. " - title: ". $row["firstname"]. " " . $row["description"] . "<br>";
