@@ -61,16 +61,16 @@ catch (Exception $e){
 						echo "<br> Survey for: " . $row["title"];
 						?>
 						
-						<?php echo "<br> QUESTION 1: " . $row["question1"]; ?>
-						<input type="text" id="ans1" name="ans1"><br>
-						<?php echo "<br> QUESTION 2: " . $row["question2"]; ?>
-						<input type="text" id="ans2" name="ans2"><br>
-						<?php echo "<br> QUESTION 3: " . $row["question3"]; ?>
-						<input type="text" id="ans3" name="ans3"><br>
-						<?php echo "<br> QUESTION 4: " . $row["question4"]; ?>
-						<input type="text" id="ans4" name="ans4"><br>
-						<?php echo "<br> QUESTION 5: " . $row["question5"]; ?>
-						<input type="text" id="ans5" name="ans5"><br>
+						<?php //echo "<br> QUESTION 1: " . $row["question1"]; ?>
+						<input <?php echo "<br> QUESTION 1: " . $row["question1"]; ?> type="text" id="ans1" name="ans1"><br>
+						<?php //echo "<br> QUESTION 2: " . $row["question2"]; ?>
+						<input <?php echo "<br> QUESTION 2: " . $row["question2"]; ?> type="text" id="ans2" name="ans2"><br>
+						<?php //echo "<br> QUESTION 3: " . $row["question3"]; ?>
+						<input <?php echo "<br> QUESTION 3: " . $row["question3"]; ?> type="text" id="ans3" name="ans3"><br>
+						<?php //echo "<br> QUESTION 4: " . $row["question4"]; ?>
+						<input <?php echo "<br> QUESTION 4: " . $row["question4"]; ?> type="text" id="ans4" name="ans4"><br>
+						<?php //echo "<br> QUESTION 5: " . $row["question5"]; ?>
+						<input <?php echo "<br> QUESTION 5: " . $row["question5"]; ?> type="text" id="ans5" name="ans5"><br>
 						<button class="button3" name="click" >DONE</button>
 						
 						<?php
