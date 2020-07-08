@@ -16,7 +16,8 @@ if(isset($_POST["create"])){
            
 			
 			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $db->prepare("SELECT * FROM Survey");
+			$sql = "SELECT * FROM Survey"
+            $stmt = $db->query($sql);
             
 			
             $e = $stmt->errorInfo();
