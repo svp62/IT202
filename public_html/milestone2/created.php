@@ -68,15 +68,15 @@ include("header.php");
 
 					foreach ($stmt as $row) {
     
-						echo "<br> ID: " . $row["id"]; 
+						//echo "<br> ID: " . $row["id"]; 
 						echo "<br> Title: " . $row["title"];
-						echo "<br> DESCRIPTION: " . $row["description"];
+						//echo "<br> DESCRIPTION: " . $row["description"];
 						echo "<br> QUESTION 1: " . $row["question1"]; 
 						echo "<br> DQUESTION 2: " . $row["question2"];
 						echo "<br> QUESTION 3: " . $row["question3"];
 						echo "<br> QUESTION 4: " . $row["question4"];
 						echo "<br> QUESTION 5: " . $row["question5"];
-						echo "<br> VISIBILITY: " . $row["visibility"];
+						//echo "<br> VISIBILITY: " . $row["visibility"];
 						 
 						
 						}
