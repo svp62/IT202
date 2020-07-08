@@ -16,18 +16,20 @@ if(isset($_POST["create"])){
            
 			
 			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $conn->prepare("SELECT * FROM Survey");
+            $stmt = $db->prepare("SELECT * FROM Survey")->fetchAll();
 			//$stmt->execute();
-			$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+			//$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-			 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			 //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			 
             $e = $stmt->errorInfo();
             
                 
                 //if ($result > 0){
 					// output data of each row
-					while($row = $stmt->fetch()) {
+					foreach ($stmt as $row) {
+    
+
 						echo "<br> ID: " . $row["id"]; 
 						echo "<br> Title: " . $row["title"];
 						echo "<br> DESCRIPTION: " . $row["description"];
