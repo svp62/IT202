@@ -16,7 +16,7 @@ if(isset($_POST["create"])){
            
 			
 			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $conn->prepare("SELECT id, title, description, FROM Survey");
+            $stmt = $conn->prepare("SELECT * FROM Survey");
 			//$stmt->execute();
 			$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -27,7 +27,7 @@ if(isset($_POST["create"])){
                 
                 //if ($result > 0){
 					// output data of each row
-					while($row = $result->fetch()) {
+					while($row = $stmt->fetch()) {
 						echo "<br> ID: " . $row["id"]; 
 						echo "<br> Title: " . $row["title"];
 						echo "<br> DESCRIPTION: " . $row["description"];
