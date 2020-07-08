@@ -20,10 +20,7 @@ if(isset($_POST["create"])){
             
 			
             $e = $stmt->errorInfo();
-            if($e[0] != "00000"){
-                echo var_export($e, true);
-            }
-            else{
+            
                 
                 if ($stmt->num_rows > 0){
 					// output data of each row
@@ -34,7 +31,7 @@ if(isset($_POST["create"])){
                 else{
                     echo "0 results to display";
                 }
-            }
+            
         }
         catch (Exception $e){
             echo $e->getMessage();
