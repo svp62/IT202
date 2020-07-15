@@ -116,5 +116,8 @@ if(isset($_POST["login"])) {
 	<span class="error" id="p">* <?php echo $passerr;?></span>
 	</label><br><br><br>
 	<input type="submit" name="login" value="Login"/>
+	
+	<p>Not registered yet?  <a href="register.php">Click Here</a></p>
+	<br><br>
 </form>
 </div>
