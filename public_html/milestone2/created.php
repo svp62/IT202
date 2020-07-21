@@ -73,6 +73,9 @@ catch (Exception $e){
 						<input  type="text" id="ans5" name="ans5"><br>
 						<button class="button3" name="click" >DONE</button>
 						
+						<?php } ?>
+						
+						
 						<?php 
 							if(isset($_POST["click"])){
 
@@ -129,7 +132,7 @@ catch (Exception $e){
 
 						?>	
 						
-					<?php } ?>
+					
 						
 						
 
