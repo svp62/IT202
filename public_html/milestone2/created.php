@@ -18,7 +18,7 @@ include("header.php");
 
 <script>
 function question(){
-		document.getElementById("divvv").innerHTML = "abcddddd";
+		document.getElementById("divvv").innerHTML = "
 		
 		
 
@@ -145,7 +145,7 @@ catch (Exception $e){
 						<input type="submit" name="click" value="DONE">
 						
 						<?php } ?>		
-						
+						";
 
                 
           
