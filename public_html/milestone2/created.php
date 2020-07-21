@@ -71,7 +71,7 @@ catch (Exception $e){
 						<input type="text" id="ans4" name="ans4"><br>
 						<?php echo "<br> QUESTION 5: " . $row["question5"]; ?>
 						<input  type="text" id="ans5" name="ans5"><br>
-						<button class="button3" name="click" >DONE</button>
+						<input class="button3" name="click" >DONE</input>
 						
 						<?php } ?>
 						
