@@ -2,16 +2,36 @@
 include("header.php");
 
 ?>
-<div>
+
+
+
+<div id="divvv">
 <form method="POST">
     <h1>Please choose one survey from the following options.</h1>
     <input type="radio" name="sephora" value="sephora">
 	<label for="sephora">SEPHORA</label><br>
 	<input type="radio" name="tony" value="tony">
 	<label for="tony">TONY'S COSMETICS</label><br>
-	<input type="submit" value="Submit">
+	<input type="submit" onclick="question()">
 </form>
 </div>
+
+<script>
+function question(){
+		document.getElementById("divvv").innerHTML = "abcddddd";
+}
+
+
+
+
+</script>
+
+
+
+
+
+
+
 <?php if(isset($_POST["tony"])) {    
 
 
