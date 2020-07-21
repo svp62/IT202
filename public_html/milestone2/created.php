@@ -61,15 +61,15 @@ catch (Exception $e){
 						echo "<br> Survey for: " . $row["title"];
 						?>
 						
-						<?php echo "<br> QUESTION 1: " . $row["question1"]; ?>
+						<?php echo "<br> QUESTION 1: " . $row["question"]; ?>
 						<input  type="text" id="ans1" name="ans1"><br>
-						<?php echo "<br> QUESTION 2: " . $row["question2"]; ?>
+						<?php echo "<br> QUESTION 2: " . $row["question"]; ?>
 						<input  type="text" id="ans2" name="ans2"><br>
-						<?php echo "<br> QUESTION 3: " . $row["question3"]; ?>
+						<?php echo "<br> QUESTION 3: " . $row["question"]; ?>
 						<input  type="text" id="ans3" name="ans3"><br>
-						<?php echo "<br> QUESTION 4: " . $row["question4"]; ?>
+						<?php echo "<br> QUESTION 4: " . $row["question"]; ?>
 						<input type="text" id="ans4" name="ans4"><br>
-						<?php echo "<br> QUESTION 5: " . $row["question5"]; ?>
+						<?php echo "<br> QUESTION 5: " . $row["question"]; ?>
 						<input  type="text" id="ans5" name="ans5"><br>
 						<button class="button3" name="click" >DONE</button>
 						
