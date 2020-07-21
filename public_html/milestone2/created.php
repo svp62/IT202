@@ -58,15 +58,22 @@ catch (Exception $e){
 					<?php foreach ($stmt as $row) { 
     
 						 
-						//echo "<br> Survey for: " . $row["title"];
+						echo "<br> Survey questions: " . $row["title"];
 						?>
 						
-						<?php echo "<br> " . $row["question"]; ?>
+						<?php echo "<br> QUESTION 1: " . $row["question1"]; ?>
 						<input  type="text" id="ans1" name="ans1"><br>
+						<?php echo "<br> QUESTION 2: " . $row["question2"]; ?>
+						<input  type="text" id="ans2" name="ans2"><br>
+						<?php echo "<br> QUESTION 3: " . $row["question3"]; ?>
+						<input  type="text" id="ans3" name="ans3"><br>
+						<?php echo "<br> QUESTION 4: " . $row["question4"]; ?>
+						<input type="text" id="ans4" name="ans4"><br>
+						<?php echo "<br> QUESTION 5: " . $row["question5"]; ?>
+						<input  type="text" id="ans5" name="ans5"><br>
+						<button class="button3" name="click" >DONE</button>
 						
-						
-						
-						<?php /*
+						<?php 
 							if(isset($_POST["click"])){
 
 										$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
@@ -85,13 +92,9 @@ catch (Exception $e){
 									try{
 									   
 										$db = new PDO($connection_string, $dbuser, $dbpass);
-										$stmt = $db->prepare("INSERT INTO Survey_questions (ques1, ques2, ques3, ques4, ques5, ans1, ans2, ans3, ans4, ans5) VALUES (:ques1, :ques2, :ques3, :ques4, :ques5, :ans1, :ans2, :ans3, :ans4, :ans5)");
+										$stmt = $db->prepare("INSERT INTO Answers (answer1, answer2, answer3, answer4, answer5) VALUES (:ans1, :ans2, :ans3, :ans4, :ans5)");
 										$result = $stmt->execute(array(
-											":ques1" => $row["question1"],
-											":ques2" => $row["question2"],
-											":ques3" => $row["question3"],
-											":ques4" => $row["question4"],
-											":ques5" => $row["question5"],
+											
 											":ans1" => $ans1,
 											":ans2" => $ans2,
 											":ans3" => $ans3,
@@ -122,12 +125,11 @@ catch (Exception $e){
 									}
 
 											 }
-											 */
+											 
 
 						?>	
 						
 					<?php } ?>
-					<button class="button3" name="click" >DONE</button>
 						
 						
 
