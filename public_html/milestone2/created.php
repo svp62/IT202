@@ -19,17 +19,8 @@ include("header.php");
 <script>
 function question(){
 		document.getElementById("divvv").innerHTML = "abcddddd";
-}
-
-
-
-
-</script>
-
-
-
-
-
+		
+		
 
 
 <?php if(isset($_POST["tony"])) {    
@@ -157,5 +148,16 @@ catch (Exception $e){
 						
 
                 
-            
+          
+}
+
+
+
+
+</script>
+
+
+
+
+  
         
