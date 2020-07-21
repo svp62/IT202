@@ -58,13 +58,13 @@ catch (Exception $e){
 					<?php foreach ($stmt as $row) { 
     
 						 
-						echo "<br> Survey for: " . $row["title"];
+						//echo "<br> Survey for: " . $row["title"];
 						?>
 						
 						<?php echo "<br> " . $row["question"]; ?>
 						<input  type="text" id="ans1" name="ans1"><br>
 						
-						<button class="button3" name="click" >DONE</button>
+						
 						
 						<?php /*
 							if(isset($_POST["click"])){
@@ -127,6 +127,7 @@ catch (Exception $e){
 						?>	
 						
 					<?php } ?>
+					<button class="button3" name="click" >DONE</button>
 						
 						
 
