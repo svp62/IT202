@@ -8,8 +8,8 @@ include("header.php");
 
 
 <?php
-	$response = file_get_contents('php://input');
-	$send = json_decode($response,true);
+	//$response = file_get_contents('php://input');
+	//$send = json_decode($response,true);
 	
 	//echo $field;
 	
@@ -19,7 +19,7 @@ include("header.php");
 
 
 
-$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
            
 			
