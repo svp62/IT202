@@ -1,5 +1,4 @@
 <?php
-require("config.php");
 
 
 
@@ -19,7 +18,7 @@ $con = mysqli_connect("d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
 
 
 
-		//$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+		///$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
            	$query = "SELECT Title FROM `Survey` ";
 			$result = mysqli_query($con,$query);
