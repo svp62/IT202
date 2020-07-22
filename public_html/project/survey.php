@@ -19,13 +19,19 @@ include("header.php");
            	
 			$db = new PDO($connection_string, $dbuser, $dbpass);
 		
-            $sql = "SELECT Title FROM `Survey`";
+            $sql = "SELECT Title FROM Survey";
             //$stmt = $db->query($sql);
 			
+			
+ 
+ 
+
+			
+			
 		if ( $stmt = $db->query($sql)) {
-			while ($row = $stmt -> fetch_row()) {
-			//printf ("%s \n", $row[0]);
-			printf ("%s \n",$row);
+			while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			printf ("%s \n", $row[0]) ;
+			
 			}
 			}
 		 $e = $stmt->errorInfo();
