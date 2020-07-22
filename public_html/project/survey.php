@@ -1,9 +1,17 @@
+
+<?php
+include("header.php");
+
+?>
+
+
+
+
+
+
 <?php
 
 
-
-
-$con = mysqli_connect("d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com","j5qsff6tgsanmu71","gettothesafezoneanddrinkeatfruit","fuscf2597g2rbtww");
 
 
 
@@ -11,35 +19,20 @@ $con = mysqli_connect("d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
 	//$send = json_decode($response,true);
 	
 	//echo $field;
-	
-	
 
-
-
-
-
-		///$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
-           	$query = "SELECT Title FROM `Survey` ";
-			$result = mysqli_query($con,$query);
-
-			while($row=mysqli_fetch_assoc($result)){
-			$term = $row['Title'];
-			$sendarray[] = array("examname" => $term);
-
-			}
-			$finalarray = json_encode($sendarray);
-
-			echo $finalarray;
-			//$db = new PDO($connection_string, $dbuser, $dbpass);
+           	
+			$db = new PDO($connection_string, $dbuser, $dbpass);
 		
             
 			
-		/*	if ( $stmt = $db->query($sql)) {
+		if ( $stmt = $db->query($sql)) {
 			while ($row = $stmt -> fetch_row()) {
-			printf ("%s \n", $row[0]);
+			//printf ("%s \n", $row[0]);
+			printf ("%s \n",$row);
 			}
-		*/		}
+			}
 		 $e = $stmt->errorInfo();
 		
 		}
