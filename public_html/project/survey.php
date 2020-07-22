@@ -19,7 +19,8 @@ include("header.php");
            	
 			$db = new PDO($connection_string, $dbuser, $dbpass);
 		
-            
+            $sql = "SELECT Title FROM `Survey`";
+            //$stmt = $db->query($sql);
 			
 		if ( $stmt = $db->query($sql)) {
 			while ($row = $stmt -> fetch_row()) {
