@@ -1,19 +1,13 @@
 
+
+
+
+
 <?php
+
+
+
 include("header.php");
-
-?>
-
-
-
-
-
-
-<?php
-
-
-
-
 
 	//$response = file_get_contents('php://input');
 	//$send = json_decode($response,true);
