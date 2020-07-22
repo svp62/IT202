@@ -2,159 +2,162 @@
 include("header.php");
 
 ?>
+<html>
+<body onload="sendtoquestion()"> 
 
+<br>
+<br>
+<center style="color: black; font-family:Roboto; font-size:40px;">Take survey</center> 
+<br> 
+<br> 
+<br> 
 
-
-<div id="divvv">
-<form method="POST">
-    <h1>Please choose one survey from the following options.</h1>
-    <input type="radio" name="sephora" value="sephora">
-	<label for="sephora">SEPHORA</label><br>
-	<input type="radio" name="tony" value="tony">
-	<label for="tony">TONY'S COSMETICS</label><br>
-	<input type="submit" onclick="question()">
-</form>
-</div>
+ <div id="selection">
+    <form>
+     <center> <table id="review"></center>
+      </table>
+    </form>
+  </div>
+<br>
+  <div id="examstarts">
+    <h1 id="examheading" style="text-align:center; padding: 50px;"></h1>
+    <form id="exam"></form>
+  </div>
+  
+   
+</body> 
 
 <script>
 function question(){
-		document.getElementById("divvv").innerHTML = "
-		
-		
-
-
-<?php if(isset($_POST["tony"])) {    
-
-
-			$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
-        try{
-           
-			
-			$db = new PDO($connection_string, $dbuser, $dbpass);
-			$sql = "SELECT * FROM `Survey` where id=2";
-            $stmt = $db->query($sql);
-			
-			 
-            $e = $stmt->errorInfo();
-
-					
-                
-            
-        }
-        catch (Exception $e){
-            echo $e->getMessage();
-        }
-
-				 }
-		  ?>
-
-<?php if(isset($_POST["sephora"])) { 
-
-			$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
-        try{
-           
-			$db = new PDO($connection_string, $dbuser, $dbpass);
-			$sql = "SELECT * FROM `Questions` where survey_id=1";
-            $stmt = $db->query($sql);
-			
-            $e = $stmt->errorInfo();
-		} 
-
-catch (Exception $e){
-            echo $e->getMessage();
-        }
-
-				 }
-?>
-					
-						
-						
-						<?php 
-							if(isset($_POST["click"])){
-
-										$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
-										$ans1 = $_POST["ans1"];
-										$ans2 = $_POST["ans2"];
-										$ans3 = $_POST["ans3"];
-										$ans4 = $_POST["ans4"];
-										$ans5 = $_POST["ans5"];
-										
-										echo $ans1;
-										echo $ans2;
-										echo $ans3;
-										echo $ans4;
-										echo $ans5;
-										
-									try{
-									   
-										$db = new PDO($connection_string, $dbuser, $dbpass);
-										$stmt = $db->prepare("INSERT INTO Answers (answer1, answer2, answer3, answer4, answer5) VALUES (:ans1, :ans2, :ans3, :ans4, :ans5)");
-										$result = $stmt->execute(array(
-											
-											":ans1" => $ans1,
-											":ans2" => $ans2,
-											":ans3" => $ans3,
-											":ans4" => $ans4,
-											":ans5" => $ans5
-											
-										));
-										
-										$e = $stmt->errorInfo();
-										if($e[0] != "00000"){
-											echo var_export($e, true);
-										}
-										else{
-											
-											if ($result){
-												echo"<br>---------------------------------------------------------------------------------<br>";
-												echo "Successfully recorded your survey ";
-												echo"<br>---------------------------------------------------------------------------------<br>";
-											}
-											else{
-												echo "Error creating data";
-											}
-											} 
-									}
-
-							catch (Exception $e){
-										echo $e->getMessage();
-									}
-
-											 }
-											 
-
-						?>	
-						
-					
-				<?php foreach ($stmt as $row) { 
-    
-						 
-						echo "<br> Survey questions: " . $row["title"];
-						?>
-						
-						<?php echo "<br> QUESTION 1: " . $row["question1"]; ?>
-						<input  type="text" id="ans1" name="ans1"><br>
-						<?php echo "<br> QUESTION 2: " . $row["question2"]; ?>
-						<input  type="text" id="ans2" name="ans2"><br>
-						<?php echo "<br> QUESTION 3: " . $row["question3"]; ?>
-						<input  type="text" id="ans3" name="ans3"><br>
-						<?php echo "<br> QUESTION 4: " . $row["question4"]; ?>
-						<input type="text" id="ans4" name="ans4"><br>
-						<?php echo "<br> QUESTION 5: " . $row["question5"]; ?>
-						<input  type="text" id="ans5" name="ans5"><br>
-						<input type="submit" name="click" value="DONE">
-						
-						<?php } ?>		
-						";
+		document.getElementById("divvv").innerHTML = "timepas";
 
                 
           
 }
 
+function sendtoquestion() {
+  
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var response = JSON.parse(this.responseText);
+        display_list(response);
+      }
+    };
+    xhr.open("POST", "survey.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send();
+
+  }
+
+function display_list(response) {
+    var len = Object.keys(response).length;
+    var html = "";
+
+    html += '<thead> <tr>';
+      html += '<th style = "text-align: center">' + 'Surveys Available' + '</th>';
+    html += '</tr> </thead>';
+    html += '<tbody >';
+    for (var i = 0; i < len; i++) {
+       survey_name = response[i]["name"];
+      console.log(survey_name);
+	
+	html += '<td>' + '<a href="#" style="color: white;" ' + 'onclick=getquestion("' + survey_name + '") >' + survey_name   + ' </td>';
+	html += '</tbody>';
+    }
+    document.getElementById("review").innerHTML = html;
+
+  }
+
+
+function getquestion(survey_name){
+    window.survey = survey_name;
+     document.getElementById("review").innerHTML = "";
+    document.getElementById("selection").innerHTML = "";
+   document.getElementById("examheading").innerHTML = "Survey Starts";
+   document.getElementById("examheading").style.color = "white";
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var response = JSON.parse(this.responseText);
+        console.log(response);
+	if(response['response'] == 'reject'){
+	var html="<div class='submitted'>";
+                 html+='<h4><center><font size="+2">Survey was already Taken</font></center></h4>';
+                 var ajaxDisplay = document.getElementById('exam');
+		document.getElementById("examheading").innerHTML = "";
+                 ajaxDisplay.innerHTML=html;
+	}
+	else{
+        display_question(response);
+	}
+      }
+    };
+    xhr.open("POST", "questions.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+var sendd = {'name' : survey_name };
+console.log(sendd);    
+xhr.send(JSON.stringify(sendd));
+  }
+  
+  
+function display_question(response) {
+    var questions_len = Object.keys(response).length;
+    var exam = "";
+    var questionID = "";
+    for (var index = 0; index < questions_len; index++) {
+      var question_id = response[index]['question_id'];
+      console.log(question_id);
+      var question = response[index]['question'];
+     console.log(question);
+      var points = response[index]['points'];
+      window.question_ids.push(question_id);
+      exam += '<h3 style="float:center;">' + (index + 1) + ") " + question + '<br>(Points = ' + points + ')' + '</h3>';
+      exam += '<textarea rows="10" style="width:80%" placeholder="Answer..." id=' + question_id + ' class="questions" >' + '</textarea>';
+    }
+    exam += '<br><br><button type="button" class="submitbutton" onclick="sendAnswers()">Submit</button>';
+    document.getElementById("exam").innerHTML = exam;
+	
+}
+
+ function sendAnswers() {
+    var response = [];
+	document.getElementById("examheading").innerHTML = "";
+
+	response.push({"name":Survey_name , "username": "user_test"});
+
+     for (var index = 1; index <= window.question_ids.length; index++) {
+      	var qu_id = window.question_ids[index-1];
+	var data = {};
+      	data['ID'] = qu_id;
+      	data['answer_body'] = document.getElementById(qu_id).value;
+	response.push(data);
+	//console.log(JSON.stringify(response));
+	}
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            	 console.log(this.responseText);
+	   	 var html="<div class='submitted'>";
+	   	 html+='<h4><center><font size="+2">Exam Successfully Submitted</font></center></h4>';
+   		 var ajaxDisplay = document.getElementById('exam');
+
+    		 ajaxDisplay.innerHTML=html;
+        }
+      };
+      xhr.open("POST", "Answers.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send(JSON.stringify(response));
+	console.log(response);
+  }
 
 
 
 </script>
+
+</html>
+
+
 
 
 
