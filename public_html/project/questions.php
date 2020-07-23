@@ -11,7 +11,7 @@
            	
 			$db = new PDO($connection_string, $dbuser, $dbpass);
 		
-            $sql = "SELECT id FROM Survey WHERE id=$id";
+            $sql = "SELECT id FROM Survey WHERE id=1";
 			
 		if ( $stmt = $db->query($sql)) {
 			$row = $stmt->fetch(PDO::FETCH_NUM);
