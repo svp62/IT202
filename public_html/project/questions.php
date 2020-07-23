@@ -15,11 +15,31 @@
 			
 		if ( $stmt = $db->query($sql)) {
 			$row = $stmt->fetch(PDO::FETCH_NUM);
-			
-			
-			}
+			}	
+		$id = $row[0];
 		 $e = $stmt->errorInfo();
-		$f = json_encode($row[0]);
+		}
+        catch (Exception $e){
+            echo $e->getMessage();
+        }
+		
+		try{
+           	
+			$db = new PDO($connection_string, $dbuser, $dbpass);
+		
+            $sql = "SELECT question1, question2, question3, question4, question5 FROM Questions WHERE id=1";
+			
+		if ( $stmt = $db->query($sql)){
+			$row = $stmt->fetch(PDO::FETCH_NUM)) 
+				$q1 = $row[0];
+				$q2 = $row[1];
+				$q3 = $row[2];
+				$q4 = $row[3];
+				$q5 = $row[4];
+				$sendarray= array("q1" => $q1, "q2" => $q2, "q3" => $q3, "q4" => $q4, "q5" => $q5);
+			}
+		$e = $stmt->errorInfo();
+		$f = json_encode($sendarray);
 		echo $f;
 		}
         catch (Exception $e){

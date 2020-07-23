@@ -96,17 +96,25 @@ xhr.send(JSON.stringify(sendd));
   
   
 function display_question(response) {
-    var questions_len = Object.keys(response).length;
+    var counter = 3;
     var exam = "";
     var questionID = "";
-    for (var index = 0; index < questions_len; index++) {
-      var question_id = response[index]['question_id'];
+    for (var index = 0; index < 5; index++) {
+		if(response['q4']!='-1')
+		{ counter++; }
+		if(response['q5']!='-1')
+		{ counter++; }
+	}
+		
+	for (var index = 0; index < counter; index++) {
+		
+      var question_id = index;
       console.log(question_id);
-      var question = response[index]['question'];
-     console.log(question);
-      var points = response[index]['points'];
+      var question = response['q'+index];
+	  console.log(question);
+      
       window.question_ids.push(question_id);
-      exam += '<h3 style="float:center;">' + (index + 1) + ") " + question + '<br>(Points = ' + points + ')' + '</h3>';
+      exam += '<h3 style="float:center;">' + (index + 1) + " " + question  + '</h3>';
       exam += '<textarea rows="10" style="width:80%" placeholder="Answer..." id=' + question_id + ' class="questions" >' + '</textarea>';
     }
     exam += '<br><br><button type="button" class="submitbutton" onclick="sendAnswers()">Submit</button>';
@@ -135,8 +143,7 @@ function display_question(response) {
 	   	 var html="<div class='submitted'>";
 	   	 html+='<h4><center><font size="+2">Exam Successfully Submitted</font></center></h4>';
    		 var ajaxDisplay = document.getElementById('exam');
-
-    		 ajaxDisplay.innerHTML=html;
+    		ajaxDisplay.innerHTML=html;
         }
       };
       xhr.open("POST", "Answers.php", true);
