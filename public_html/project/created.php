@@ -19,10 +19,7 @@ include("header.php");
     </form>
   </div>
 <br>
-  <div id="examstarts">
-    <h1 id="examheading" style="text-align:center; padding: 50px;"></h1>
-    <form id="exam"></form>
-  </div>
+  
   
    
 </body> 
@@ -81,7 +78,7 @@ function getquestion(survey_name){
 	var html="<div class='submitted'>";
                  html+='<h4><center><font size="+2">Survey was already Taken</font></center></h4>';
                  var ajaxDisplay = document.getElementById('exam');
-		document.getElementById("examheading").innerHTML = " ";
+		document.getElementById("examheading").innerHTML = "";
                  ajaxDisplay.innerHTML=html;
 	}
 	else{
@@ -119,7 +116,7 @@ function display_question(response) {
       exam += '<textarea rows="10" style="width:80%" placeholder="Answer..." id=' + question_id + ' class="questions" >' + '</textarea>';
     }
     exam += '<br><br><button type="button" class="submitbutton" onclick="sendAnswers()">Submit</button>';
-    document.getElementById("exam").innerHTML = exam;
+    document.getElementById("selection").innerHTML = exam;
 	
 }
 
