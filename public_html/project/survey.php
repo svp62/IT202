@@ -35,6 +35,6 @@ include("header.php");
 
 //$finalarray = json_encode($sendarray);
 
-echo $sendarray;
+echo json_encode($sendarray);
 
 ?> 

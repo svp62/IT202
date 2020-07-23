@@ -12,7 +12,7 @@ include("header.php");
 <br> 
 <br> 
 
- <div id="selection">
+ <div id="review">
     <form>
      <center> <table id="review"></center>
       </table>
@@ -34,6 +34,7 @@ function sendtoquestion() {
     xhr.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var response = JSON.parse(this.responseText);
+		console.log(response);
         display_list(response);
       }
     };
