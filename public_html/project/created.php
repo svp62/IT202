@@ -26,7 +26,7 @@ include("header.php");
 
 <script>
   var question_ids = new Array();
-
+var survey;
 function sendtoquestion() {
   
     var xhr = new XMLHttpRequest();
@@ -65,10 +65,9 @@ function display_list(response) {
 
 function getquestion(survey_name){
     window.survey = survey_name;
-     document.getElementById("review").innerHTML = "";
+    document.getElementById("review").innerHTML = "";
     document.getElementById("selection").innerHTML = "";
-   document.getElementById("examheading").innerHTML = "Survey Starts";
-   document.getElementById("examheading").style.color = "white";
+    
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -103,7 +102,7 @@ function display_question(response) {
 	if(response['q5']=='-1')
 		{ counter--; }
 	
-		
+		exam+= '<h1 style="float:center;color:white;">' + survey + "'s Survey </h1><br>";
 	for (var index = 1; index <= counter; index++) {
 		
       var question_id = index;
