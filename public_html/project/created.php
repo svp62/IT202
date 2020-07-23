@@ -28,6 +28,8 @@ include("header.php");
 </body> 
 
 <script>
+  var question_ids = new Array();
+
 function sendtoquestion() {
   
     var xhr = new XMLHttpRequest();
