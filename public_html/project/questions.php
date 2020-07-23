@@ -14,7 +14,7 @@
             $sql = "SELECT id FROM Survey WHERE id=$id";
 			
 		if ( $stmt = $db->query($sql)) {
-			$row = $stmt->fetch(PDO::FETCH_NUM));
+			$row = $stmt->fetch(PDO::FETCH_NUM);
 			
 			
 			}
