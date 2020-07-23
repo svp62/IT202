@@ -68,8 +68,8 @@ function display_list(response) {
 
 function getquestion(survey_name){
     window.survey = survey_name;
-     document.getElementById("review").innerHTML = " ";
-    document.getElementById("selection").innerHTML = " ";
+     document.getElementById("review").innerHTML = "";
+    document.getElementById("selection").innerHTML = "";
    document.getElementById("examheading").innerHTML = "Survey Starts";
    document.getElementById("examheading").style.color = "white";
     var xhr = new XMLHttpRequest();
