@@ -12,7 +12,7 @@ include("header.php");
 <br> 
 <br> 
 
- <div id="review">
+ <div id="selection">
     <form>
      <center> <table id="review"></center>
       </table>
