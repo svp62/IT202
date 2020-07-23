@@ -27,7 +27,8 @@ include("header.php");
 			}
 			}
 		 $e = $stmt->errorInfo();
-		echo json_encode($sendarray);
+		$f = json_encode($sendarray);
+		echo json_decode($f);
 		}
         catch (Exception $e){
             echo $e->getMessage();
