@@ -11,7 +11,7 @@
            	
 			$db = new PDO($connection_string, $dbuser, $dbpass);
 		
-            $sql = "SELECT id FROM Survey WHERE id=$id";
+            $sql = "SELECT id FROM Survey WHERE id='$id'";
 			
 		if ( $stmt = $db->query($sql)) {
 			$row = $stmt->fetch(PDO::FETCH_NUM);
@@ -27,7 +27,7 @@
            	
 			$db = new PDO($connection_string, $dbuser, $dbpass);
 		
-            $sql = "SELECT question1, question2, question3, question4, question5 FROM Questions WHERE id=$id";
+            $sql = "SELECT question1, question2, question3, question4, question5 FROM Questions WHERE id='$id'";
 			
 		if ( $stmt = $db->query($sql)){
 			$row = $stmt->fetch(PDO::FETCH_NUM);
