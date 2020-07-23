@@ -30,7 +30,7 @@
             $sql = "SELECT question1, question2, question3, question4, question5 FROM Questions WHERE id=1";
 			
 		if ( $stmt = $db->query($sql)){
-			$row = $stmt->fetch(PDO::FETCH_NUM)) 
+			$row = $stmt->fetch(PDO::FETCH_NUM);
 				$q1 = $row[0];
 				$q2 = $row[1];
 				$q3 = $row[2];
