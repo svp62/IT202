@@ -28,13 +28,6 @@ include("header.php");
 </body> 
 
 <script>
-function question(){
-		document.getElementById("divvv").innerHTML = "timepas";
-
-                
-          
-}
-
 function sendtoquestion() {
   
     var xhr = new XMLHttpRequest();
