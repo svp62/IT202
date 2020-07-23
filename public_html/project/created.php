@@ -66,8 +66,8 @@ function display_list(response) {
 
 function getquestion(survey_name){
     window.survey = survey_name;
-     document.getElementById("review").innerHTML = "";
-    document.getElementById("selection").innerHTML = "";
+     document.getElementById("review").innerHTML = " ";
+    document.getElementById("selection").innerHTML = " ";
    document.getElementById("examheading").innerHTML = "Survey Starts";
    document.getElementById("examheading").style.color = "white";
     var xhr = new XMLHttpRequest();
@@ -79,7 +79,7 @@ function getquestion(survey_name){
 	var html="<div class='submitted'>";
                  html+='<h4><center><font size="+2">Survey was already Taken</font></center></h4>';
                  var ajaxDisplay = document.getElementById('exam');
-		document.getElementById("examheading").innerHTML = "";
+		document.getElementById("examheading").innerHTML = " ";
                  ajaxDisplay.innerHTML=html;
 	}
 	else{
