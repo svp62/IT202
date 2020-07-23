@@ -26,7 +26,7 @@
            	
 			$db = new PDO($connection_string, $dbuser, $dbpass);
 		
-            $sql = "INSERT INTO Answers(Survey_id, answer1, answer2, answer3, answer4, answer5, user_id) VALUES('1', 'a1', 'a2', 'a3', 'a4', 'a5', '2')";
+            $sql = "INSERT INTO Answers(Survey_id, answer1, answer2, answer3, answer4, answer5, user_id) VALUES('1', 'a111', 'a2', 'a3', 'a4', 'a5', '2')";
 			
 			$stmt = $db->exec($sql);
 		$e = $stmt->errorInfo();
