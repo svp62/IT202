@@ -7,8 +7,8 @@
 
 
 
-include("header.php");
-
+//include("header.php");
+require("config.php");
 	$response = file_get_contents('php://input');
 	$send = json_decode($response,true);
 	
