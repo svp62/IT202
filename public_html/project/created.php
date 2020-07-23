@@ -111,7 +111,7 @@ function display_question(response) {
 		
       var question_id = index;
       console.log(question_id);
-      var question = response['q'+index];
+      var question = response['q'+index+1];
 	  console.log(question);
       
       window.question_ids.push(question_id);
