@@ -23,7 +23,7 @@ include("header.php");
 		if ( $stmt = $db->query($sql)) {
 			while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
 				$term = $row[0];
-				$sendarray[] = array("examname" => $term);
+				$sendarray[] = array("name" => $term);
 			}
 			}
 		 $e = $stmt->errorInfo();
@@ -33,8 +33,8 @@ include("header.php");
             echo $e->getMessage();
         }
 
-$finalarray = json_encode($sendarray);
+//$finalarray = json_encode($sendarray);
 
-echo $finalarray;
+echo $sendarray;
 
 ?> 
