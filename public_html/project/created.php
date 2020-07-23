@@ -107,15 +107,15 @@ function display_question(response) {
 		{ counter--; }
 	
 		
-	for (var index = 0; index < counter; index++) {
+	for (var index = 1; index <= counter; index++) {
 		
       var question_id = index;
       console.log(question_id);
-      var question = response['q'+index+1];
+      var question = response['q'+index];
 	  console.log(question);
       
       window.question_ids.push(question_id);
-      exam += '<h3 style="float:center;">' + (index + 1) + " " + question  + '</h3>';
+      exam += '<h3 style="float:center;">' + index + " " + question  + '</h3>';
       exam += '<textarea rows="10" style="width:80%" placeholder="Answer..." id=' + question_id + ' class="questions" >' + '</textarea>';
     }
     exam += '<br><br><button type="button" class="submitbutton" onclick="sendAnswers()">Submit</button>';
