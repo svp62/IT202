@@ -98,15 +98,14 @@ xhr.send(JSON.stringify(sendd));
   
   
 function display_question(response) {
-    var counter = 3;
+    var counter = 5;
     var exam = "";
     var questionID = "";
-    for (var index = 0; index < 5; index++) {
-		if(response['q4']!='-1')
-		{ counter++; }
-		if(response['q5']!='-1')
-		{ counter++; }
-	}
+	if(response['q4']=='-1')
+		{ counter--; }
+	if(response['q5']=='-1')
+		{ counter--; }
+	
 		
 	for (var index = 0; index < counter; index++) {
 		
