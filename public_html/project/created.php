@@ -136,7 +136,7 @@ function display_question(response) {
         if (this.readyState == 4 && this.status == 200) {
             	 console.log(this.responseText);
 	   	 
-	   	 var html='<h4><center>Exam Successfully Submitted</center></h4>';
+	   	 var html='<h2><center>Survey Successfully Submitted</center></h2>';
    		 var ajaxDisplay = document.getElementById('selection');
     		ajaxDisplay.innerHTML=html;
         }
