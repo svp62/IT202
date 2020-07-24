@@ -25,7 +25,7 @@
 		try{
            	
 			$db = new PDO($connection_string, $dbuser, $dbpass);
-			  $db->beginTransaction();
+			
 
 			$a1 = $array[1]['answer_body'];
 			$a2 = $array[2]['answer_body'];
@@ -35,7 +35,7 @@
             $sql = "INSERT INTO Answers(Survey_id, answer1, answer2, answer3, answer4, answer5, user_id) VALUES('$id', '$a1', '$a2', '$a3', '$a4', '$a5', '6')";
 			
 			$stmt = $db->exec($sql);
-			  $db->commit();
+			  
 
 		$e = $stmt->errorInfo();
 		$sendarr[] = array('response'=> 'success');
