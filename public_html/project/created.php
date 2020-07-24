@@ -135,8 +135,8 @@ function display_question(response) {
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             	 console.log(this.responseText);
-	   	 var html="<div class='submitted'>";
-	   	 html+='<h4><center><font size="+2">Exam Successfully Submitted</font></center></h4>';
+	   	 
+	   	 var html='<h4><center>Exam Successfully Submitted</center></h4>';
    		 var ajaxDisplay = document.getElementById('review');
     		ajaxDisplay.innerHTML=html;
         }
