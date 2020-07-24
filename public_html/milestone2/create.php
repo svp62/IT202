@@ -32,9 +32,11 @@ if(isset($_POST["created"])){
 		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
             //$db = getDB();
+			$user_id = '2';
 			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $db->prepare("INSERT INTO Survey (title, description) VALUES (:title, :description)");
+            $stmt = $db->prepare("INSERT INTO Survey (user_id, title, description) VALUES (:user_id, :title, :description)");
             $result = $stmt->execute(array(
+				":user_id" => $user_id,
                 ":title" => $title,
                 ":description" => $description,
 				
