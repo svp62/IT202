@@ -137,7 +137,7 @@ function display_question(response) {
             	 console.log(this.responseText);
 	   	 
 	   	 var html='<h4><center>Exam Successfully Submitted</center></h4>';
-   		 var ajaxDisplay = document.getElementById('review');
+   		 var ajaxDisplay = document.getElementById('selection');
     		ajaxDisplay.innerHTML=html;
         }
       };
