@@ -36,159 +36,48 @@ if(isset($_POST["insert"])){
 	if(!empty($question1) && !empty($question2) && !empty($question3)) {
 		
 		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
-		if(!empty($question1)){
-        try{
-            //$db = getDB();
-			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $db->prepare("INSERT INTO Questions (question) VALUES (:question)");
-            $result = $stmt->execute(array(
-                ":question" => $question1,
-                
-            ));
-			
-            $e = $stmt->errorInfo();
-            if($e[0] != "00000"){
-                echo var_export($e, true);
-            }
-            else{
-                
-                if ($result){
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                    echo "Successfully created new survey for: " . $question1;
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                }
-                else{
-                    echo "Error creating data";
-                }
-            }
-        }
-        catch (Exception $e){
-            echo $e->getMessage();
-        }
-		}
-		if(!empty($question2)){
-        try{
-            //$db = getDB();
-			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $db->prepare("INSERT INTO Questions (question) VALUES (:question)");
-            $result = $stmt->execute(array(
-                ":question" => $question2,
-                
-            ));
-			
-            $e = $stmt->errorInfo();
-            if($e[0] != "00000"){
-                echo var_export($e, true);
-            }
-            else{
-                
-                if ($result){
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                    echo "Successfully created new survey for: " . $question2;
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                }
-                else{
-                    echo "Error creating data";
-                }
-            }
-        }
-        catch (Exception $e){
-            echo $e->getMessage();
-        }
-		}
-		if(!empty($question3)){
-        try{
-            //$db = getDB();
-			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $db->prepare("INSERT INTO Questions (question) VALUES (:question)");
-            $result = $stmt->execute(array(
-                ":question" => $question3,
-                
-            ));
-			
-            $e = $stmt->errorInfo();
-            if($e[0] != "00000"){
-                echo var_export($e, true);
-            }
-            else{
-                
-                if ($result){
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                    echo "Successfully created new survey for: " . $question3;
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                }
-                else{
-                    echo "Error creating data";
-                }
-            }
-        }
-        catch (Exception $e){
-            echo $e->getMessage();
-        }
-		}
-		if(!empty($question4)){
-        try{
-            //$db = getDB();
-			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $db->prepare("INSERT INTO Questions (question) VALUES (:question)");
-            $result = $stmt->execute(array(
-                ":question" => $question4,
-                
-            ));
-			
-            $e = $stmt->errorInfo();
-            if($e[0] != "00000"){
-                echo var_export($e, true);
-            }
-            else{
-                
-                if ($result){
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                    echo "Successfully created new survey for: " . $question4;
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                }
-                else{
-                    echo "Error creating data";
-                }
-            }
-        }
-        catch (Exception $e){
-            echo $e->getMessage();
-        }
-		}
-		if(!empty($question5)){
-        try{
-            //$db = getDB();
-			$db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $db->prepare("INSERT INTO Questions (question) VALUES (:question)");
-            $result = $stmt->execute(array(
-                ":question" => $question5,
-                
-            ));
-			
-            $e = $stmt->errorInfo();
-            if($e[0] != "00000"){
-                echo var_export($e, true);
-            }
-            else{
-                
-                if ($result){
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                    echo "Successfully created new survey for: " . $question5;
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                }
-                else{
-                    echo "Error creating data";
-                }
-            }
-        }
-        catch (Exception $e){
-            echo $e->getMessage();
-        }
-		}
 		
+        try{
+            //$db = getDB();
+			$db = new PDO($connection_string, $dbuser, $dbpass);
+            $stmt = $db->prepare("INSERT INTO Questions (question1, question2, question3, question4, question5) VALUES (:question1, :question2, :question3, :question4, :question5)");
+            $result = $stmt->execute(array(
+                ":question1" => $question1,
+				":question2" => $question2,
+				":question3" => $question3,
+				":question4" => $question4,
+				":question5" => $question5,
+                
+            ));
+			
+            $e = $stmt->errorInfo();
+            if($e[0] != "00000"){
+                echo var_export($e, true);
+            }
+            else{
+                
+                if ($result){
+					echo"<br>---------------------------------------------------------------------------------<br>";
+                    echo "Successfully created new survey for: " . $title;
+					echo"<br>---------------------------------------------------------------------------------<br>";
+                }
+                else{
+                    echo "Error creating data";
+                }
+            }
+        }
+        catch (Exception $e){
+            echo $e->getMessage();
+        }
 		
 	}
+       
+		
+		
+		
+		
+		
+	
 	
 }
 
