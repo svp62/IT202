@@ -121,10 +121,10 @@ function display_question(response) {
 
  function sendAnswers() {
     var response = [];
-	//document.getElementById("selection").innerHTML = "";
+	//	document.getElementById("selection").innerHTML = "";
 	response.push({"name":survey });
     for (var index = 1; index <= window.question_ids.length; index++) {
-      	var qu_id = window.question_ids[index];
+      	var qu_id = window.question_ids[index-1];
 		var data = {};
       	data['ID'] = qu_id;
       	data['answer_body'] = document.getElementById(qu_id).value;
