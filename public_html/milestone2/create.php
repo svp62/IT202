@@ -4,9 +4,11 @@
 ?>
 
 <?php
+include("header.php");
+
 if(isset($_POST["created"])){
 	
-	include("header.php");
+	
 	echo $_POST["email"];
 	
 	if(empty($_POST["title"])){
