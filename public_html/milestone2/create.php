@@ -37,7 +37,7 @@ if(isset($_POST["created"])){
 		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
             //$db = getDB();
-			$user_id = '2';
+			$user_id = '6';
 			$db = new PDO($connection_string, $dbuser, $dbpass);
             $stmt = $db->prepare("INSERT INTO Survey (user_id, title, description) VALUES (:user_id, :title, :description)");
             $result = $stmt->execute(array(
@@ -56,11 +56,7 @@ if(isset($_POST["created"])){
                 if ($result){
 					
 					header('Location: create_question.php');
-					/*
-					echo"<br>---------------------------------------------------------------------------------<br>";
-                    echo "Successfully created new survey for: " . $title;
-					echo"<br>---------------------------------------------------------------------------------<br>";
-					*/
+					
                 }
                 else{
                     echo "Error creating data";

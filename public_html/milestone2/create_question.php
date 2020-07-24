@@ -1,9 +1,10 @@
 <?php
-include("header.php");
+
 
 ?>
 
 <?php
+include("header.php");
 if(isset($_POST["insert"])){
 	
 	if(empty($_POST["question1"])){
@@ -59,6 +60,7 @@ if(isset($_POST["insert"])){
             else{
                 
                 if ($result){
+					$title = $_POST["title"];
 					echo"<br>---------------------------------------------------------------------------------<br>";
                     echo "Successfully created new survey for: " . $title;
 					echo"<br>---------------------------------------------------------------------------------<br>";
