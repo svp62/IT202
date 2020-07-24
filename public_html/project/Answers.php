@@ -25,8 +25,12 @@
 		try{
            	
 			$db = new PDO($connection_string, $dbuser, $dbpass);
-		
-            $sql = "INSERT INTO Answers(Survey_id, answer1, answer2, answer3, answer4, answer5, user_id) VALUES('1', 'a111', 'a2', 'a3', 'a4', 'a5', '6')";
+			$a1 = $array[1]['answer_body'];
+			$a2 = $array[2]['answer_body'];
+			$a3 = $array[3]['answer_body'];
+			$a4 = $array[4]['answer_body'];
+			$a5 = $array[5]['answer_body'];
+            $sql = "INSERT INTO Answers(Survey_id, answer1, answer2, answer3, answer4, answer5, user_id) VALUES('$id', '$a1', '$a2', '$a3', '$a4', '$a5, '6')";
 			
 			$stmt = $db->exec($sql);
 		$e = $stmt->errorInfo();
