@@ -121,32 +121,30 @@ function display_question(response) {
 
  function sendAnswers() {
     var response = [];
-	document.getElementById("examheading").innerHTML = "";
-
-	response.push({"name":Survey_name , "username": "user_test"});
-
-     for (var index = 1; index <= window.question_ids.length; index++) {
+	document.getElementById("review").innerHTML = "";
+	response.push({"name":survey });
+    for (var index = 1; index <= window.question_ids.length; index++) {
       	var qu_id = window.question_ids[index-1];
-	var data = {};
+		var data = {};
       	data['ID'] = qu_id;
       	data['answer_body'] = document.getElementById(qu_id).value;
 	response.push(data);
 	//console.log(JSON.stringify(response));
 	}
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             	 console.log(this.responseText);
 	   	 var html="<div class='submitted'>";
 	   	 html+='<h4><center><font size="+2">Exam Successfully Submitted</font></center></h4>';
-   		 var ajaxDisplay = document.getElementById('exam');
+   		 var ajaxDisplay = document.getElementById('review');
     		ajaxDisplay.innerHTML=html;
         }
       };
       xhr.open("POST", "Answers.php", true);
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhr.send(JSON.stringify(response));
-	console.log(response);
+	  console.log(response);
   }
 
 
