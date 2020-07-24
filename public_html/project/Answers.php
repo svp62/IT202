@@ -38,7 +38,7 @@
 			  $db->commit();
 
 		$e = $stmt->errorInfo();
-		$sendarr = array('response': 'success');
+		$sendarr = array('response'=> 'success');
 		$f = json_encode($sendarr);
 		echo $f;
 		
