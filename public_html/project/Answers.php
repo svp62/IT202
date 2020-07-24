@@ -38,6 +38,9 @@
 			  $db->commit();
 
 		$e = $stmt->errorInfo();
+		$sendarr = {'response': 'success'};
+		$f = json_encode($sendarr);
+		echo $f;
 		
 		}
         catch (Exception $e){
