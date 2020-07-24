@@ -36,6 +36,8 @@ li a:hover {
 }
 .error {color: #FF0000;}
 body {
+	background-image:url('image.gif'); 
+	background-repeat:repeat; 
 	background-color: lightgrey;
 	text-align: center;
 	font-size: 32px
