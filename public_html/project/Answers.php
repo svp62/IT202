@@ -30,7 +30,7 @@
 			$a3 = $array[3]['answer_body'];
 			$a4 = $array[4]['answer_body'];
 			$a5 = $array[5]['answer_body'];
-            $sql = "INSERT INTO Answers(Survey_id, answer1, answer2, answer3, answer4, answer5, user_id) VALUES('$id', '$a1', '$a2', '$a3', '$a4', '$a5, '6')";
+            $sql = "INSERT INTO Answers(Survey_id, answer1, answer2, answer3, answer4, answer5, user_id) VALUES('$id', '$a1', '$a2', '$a3', '$a4', '$a5', '6')";
 			
 			$stmt = $db->exec($sql);
 		$e = $stmt->errorInfo();
