@@ -20,6 +20,7 @@ catch (Exception $e){
 ?>
 
 <?php
+
 require("config.php");
 
 $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
@@ -38,10 +39,13 @@ try{
 catch (Exception $e){
 	echo $e->getMessage();
 }
+
 ?>
 
 
 <?php
+
+
 require("config.php");
 
 $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
@@ -65,6 +69,8 @@ catch (Exception $e){
 	echo $e->getMessage();
 }
 ?>
+
+
 <?php
 require("config.php");
 
