@@ -16,8 +16,8 @@ if(isset($_GET["idnum"])){
 	$stmt2 = $db->prepare("SELECT survey_id, question1, question2, question3, question4, question5 FROM Questions where survey_id = :survey_id");
     $stmt->execute([":id"=>$idnum]);
 	$stmt2->execute([":survey_id"=>$idnum]);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-	$result2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+	$result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
 }
 else{
     echo "ID not provided in url. Please put '?idnum=(id number where you want to update data)' at the end of URL. ";
