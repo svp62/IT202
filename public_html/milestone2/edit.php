@@ -10,8 +10,8 @@ $result = array();
 $result2 = array();
 
 if(isset($_GET["idnum"])){
-    //$idnum = $_GET["idnum"];
-	$idnum = '1';
+    $idnum = $_GET["idnum"];
+	
 	echo $idnum;
     $stmt = $db->prepare("SELECT id, Title, Description FROM Survey where id = :id");
 	$stmt2 = $db->prepare("SELECT survey_id, question1, question2, question3, question4, question5 FROM Questions where survey_id = :survey_id");
@@ -19,6 +19,21 @@ if(isset($_GET["idnum"])){
 	$stmt2->execute([":survey_id"=>$idnum]);
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 	$result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
+	
+	$e2 = $stmt2->errorInfo();
+			if($e2[0] != "00000"){
+                echo var_export($e2, true);
+			}
+			else{
+				echo $e2->getMessage();
+			}
+	$e = $stmt->errorInfo();
+			if($e[0] != "00000"){
+                echo var_export($e, true);
+			}
+			else{
+				echo $e->getMessage();
+			}
 }
 else{
     echo "ID not provided in url. Please put '?idnum=(id number where you want to update data)' at the end of URL. ";
@@ -68,7 +83,7 @@ if(isset($_POST["updated"])){
 	$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 	$db = new PDO($connection_string, $dbuser, $dbpass);
 	
-	$idnum = '1';
+	
 	
     $title = $_POST["title"];
     $description = $_POST["description"];
