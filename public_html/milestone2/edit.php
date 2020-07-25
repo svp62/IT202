@@ -11,8 +11,9 @@ $result2 = array();
 
 if(isset($_GET["idnum"])){
     $idnum = $_GET["idnum"];
-    $stmt = $db->prepare("SELECT * FROM Survey where id = :id");
-	$stmt2 = $db->prepare("SELECT * FROM Questions where survey_id = :survey_id");
+	echo $idnum;
+    $stmt = $db->prepare("SELECT id, Title, Description FROM Survey where id = :id");
+	$stmt2 = $db->prepare("SELECT survey_id, question1, question2, question3, question4, question5 FROM Questions where survey_id = :survey_id");
     $stmt->execute([":id"=>$idnum]);
 	$stmt2->execute([":survey_id"=>$idnum]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
