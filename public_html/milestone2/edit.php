@@ -10,7 +10,8 @@ $result = array();
 $result2 = array();
 
 if(isset($_GET["idnum"])){
-    $idnum = $_GET["idnum"];
+    //$idnum = $_GET["idnum"];
+	$idnum = '1';
 	echo $idnum;
     $stmt = $db->prepare("SELECT id, Title, Description FROM Survey where id = :id");
 	$stmt2 = $db->prepare("SELECT survey_id, question1, question2, question3, question4, question5 FROM Questions where survey_id = :survey_id");
@@ -67,7 +68,7 @@ if(isset($_POST["updated"])){
 	$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 	$db = new PDO($connection_string, $dbuser, $dbpass);
 	
-	
+	$idnum = '1';
 	
     $title = $_POST["title"];
     $description = $_POST["description"];
