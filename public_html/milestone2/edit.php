@@ -25,6 +25,40 @@ else{
 ?>
 
 
+<div>
+
+<form method="POST">
+    <label for="title">Title
+	<input type="text" id="title" name="title" value="<?php echo get($result, "title");?>"/>
+	</label><br><br>
+	<label for="description">Description
+	<input type="text" id="description" name="description" value="<?php echo get($result, "description");?>"/>
+	</label><br><br>
+	
+	<label for="question1">Question 1
+	<input type="text" id="question1" name="question1" value="<?php echo get($result2, "question1");?>"/>
+	</label><br><br>
+	
+	<label for="question2">Question 2
+	<input type="text" id="question2" name="question2" value="<?php echo get($result2, "question2");?>"/>
+	</label><br><br>
+	
+	<label for="question3">Question 3
+	<input type="text" id="question3" name="question3" value="<?php echo get($result2, "question3");?>"/>
+	</label><br><br>
+	
+	<label for="question4">Question 4
+	<input type="text" id="question4" name="question4" value="<?php echo get($result2, "question4");?>"/>
+	</label><br><br>
+	
+	<label for="question5">Question 5
+	<input type="text" id="question5" name="question5" value="<?php echo get($result2, "question5");?>"/>
+	</label><br><br>
+	
+	<input type="submit" name="updated" value="Update Survey"/>
+</form>
+</div>
+
 
 <?php
 if(isset($_POST["updated"])){
@@ -44,7 +78,7 @@ if(isset($_POST["updated"])){
     
     if(!empty($title) && !empty($description) ){
         try{
-            $stmt = $db->prepare("UPDATE Survey set title = :title, description =: description where id=:id");
+            $stmt = $db->prepare("UPDATE Survey set Title = :title, Description =: description where id=:id");
 			
             $result = $stmt->execute(array(
                 ":title" => $title,
@@ -115,34 +149,3 @@ if(isset($_POST["updated"])){
 ?>
 
 
-
-<form method="POST">
-    <label for="title">Title
-	<input type="text" id="title" name="title" value="<?php echo get($result, "title");?>"/>
-	</label><br><br>
-	<label for="description">Description
-	<input type="text" id="description" name="description" value="<?php echo get($result, "description");?>"/>
-	</label><br><br>
-	
-	<label for="question1">Question 1
-	<input type="text" id="question1" name="question1" value="<?php echo get($result2, "question1");?>"/>
-	</label><br><br>
-	
-	<label for="question2">Question 2
-	<input type="text" id="question2" name="question2" value="<?php echo get($result2, "question2");?>"/>
-	</label><br><br>
-	
-	<label for="question3">Question 3
-	<input type="text" id="question3" name="question3" value="<?php echo get($result2, "question3");?>"/>
-	</label><br><br>
-	
-	<label for="question4">Question 4
-	<input type="text" id="question4" name="question4" value="<?php echo get($result2, "question4");?>"/>
-	</label><br><br>
-	
-	<label for="question5">Question 5
-	<input type="text" id="question5" name="question5" value="<?php echo get($result2, "question5");?>"/>
-	</label><br><br>
-	
-	<input type="submit" name="updated" value="Update Survey"/>
-</form>
