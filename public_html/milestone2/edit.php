@@ -7,13 +7,14 @@ $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 $db = new PDO($connection_string, $dbuser, $dbpass);
 $idnum = -1;
 $result = array();
+$result2 = array();
 
 if(isset($_GET["idnum"])){
     $idnum = $_GET["idnum"];
     $stmt = $db->prepare("SELECT * FROM Survey where id = :id");
-	$stmt2 = $db->prepare("SELECT * FROM Questions where survey_id = :id");
+	$stmt2 = $db->prepare("SELECT * FROM Questions where survey_id = :survey_id");
     $stmt->execute([":id"=>$idnum]);
-	$stmt2->execute([":id"=>$idnum]);
+	$stmt2->execute([":survey_id"=>$idnum]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 	$result2 = $stmt2->fetch(PDO::FETCH_ASSOC);
 }
@@ -98,7 +99,7 @@ if(isset($_POST["updated"])){
 		
 		if( !empty($question1) && !empty($question2) && !empty($question3) && !empty($question4) && !empty($question5)){
 			try{
-			$stmt2 = $db->prepare("UPDATE Questions set question1 = :question1, question2 = :question2, question3 = :question3, question4 = :question4, question5 = :question5 where id=:id");
+			$stmt2 = $db->prepare("UPDATE Questions set question1 = :question1, question2 = :question2, question3 = :question3, question4 = :question4, question5 = :question5 where survey_id=:survey_id");
 			
 			$result2 = $stmt2->execute(array(
                 ":question1" => $question1,
@@ -107,7 +108,7 @@ if(isset($_POST["updated"])){
 				":question4" => $question4,
 				":question5" => $question5,
 				
-                ":id" => $idnum
+                ":survey_id" => $idnum
             ));
 			$e2 = $stmt2->errorInfo();
 			if($e2[0] != "00000"){
