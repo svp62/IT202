@@ -40,7 +40,7 @@ if(isset($_POST["insert"])){
 		
         try{
             //$db = getDB();
-			$surid = '2';
+			$surid = '3';
 			$db = new PDO($connection_string, $dbuser, $dbpass);
             $stmt = $db->prepare("INSERT INTO Questions (survey_id, question1, question2, question3, question4, question5) VALUES (:survey_id, :question1, :question2, :question3, :question4, :question5)");
             $result = $stmt->execute(array(
