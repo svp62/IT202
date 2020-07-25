@@ -29,10 +29,10 @@ else{
 
 <form method="POST">
     <label for="title">Title
-	<input type="text" id="title" name="title" value="<?php echo get($result, "title");?>"/>
+	<input type="text" id="title" name="title" value="<?php echo get($result, "Title");?>"/>
 	</label><br><br>
 	<label for="description">Description
-	<input type="text" id="description" name="description" value="<?php echo get($result, "description");?>"/>
+	<input type="text" id="description" name="description" value="<?php echo get($result, "Description");?>"/>
 	</label><br><br>
 	
 	<label for="question1">Question 1
