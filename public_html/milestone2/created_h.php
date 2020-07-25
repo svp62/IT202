@@ -37,7 +37,7 @@ function sendtoquestion() {
         display_list(response);
       }
     };
-    xhr.open("POST", "survey.php", true);
+    xhr.open("POST", "survey_h.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send();
 
@@ -85,7 +85,7 @@ function getquestion(survey_name){
 	}
       }
     };
-    xhr.open("POST", "questions.php", true);
+    xhr.open("POST", "questions_h.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 var sendd = {'name' : survey_name };
 console.log(sendd);    
@@ -102,7 +102,7 @@ function display_question(response) {
 	if(response['q5']=='-1')
 		{ counter--; }
 	
-		exam+= '<h1 style="float:center;color:white;">' + survey + "'s Survey </h1><br>";
+		exam+= '<h1 style="float:center;color:black;">' + survey + "'s Survey </h1><br>";
 	for (var index = 1; index <= counter; index++) {
 		
       var question_id = index;
@@ -141,7 +141,7 @@ function display_question(response) {
     		ajaxDisplay.innerHTML=html;
         }
       };
-      xhr.open("POST", "Answers.php", true);
+      xhr.open("POST", "Answers_h.php", true);
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhr.send(JSON.stringify(response));
 	  console.log(response);
