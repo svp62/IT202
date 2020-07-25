@@ -24,40 +24,16 @@ else{
 
 ?>
 
-<form method="POST">
-    <label for="title">Title
-	<input type="text" id="title" name="title" value="<?php echo get($result, "title");?>"/>
-	</label><br><br>
-	<label for="description">Description
-	<input type="text" id="description" name="description" value="<?php echo get($result, "description");?>"/>
-	</label><br><br>
-	
-	<label for="question1">Question 1
-	<input type="text" id="question1" name="question1" value="<?php echo get($result2, "question1");?>"/>
-	</label><br><br>
-	
-	<label for="question2">Question 2
-	<input type="text" id="question2" name="question2" value="<?php echo get($result2, "question2");?>"/>
-	</label><br><br>
-	
-	<label for="question3">Question 3
-	<input type="text" id="question3" name="question3" value="<?php echo get($result2, "question3");?>"/>
-	</label><br><br>
-	
-	<label for="question4">Question 4
-	<input type="text" id="question4" name="question4" value="<?php echo get($result2, "question4");?>"/>
-	</label><br><br>
-	
-	<label for="question5">Question 5
-	<input type="text" id="question5" name="question5" value="<?php echo get($result2, "question5");?>"/>
-	</label><br><br>
-	
-	<input type="submit" name="updated" value="Update Survey"/>
-</form>
 
 
 <?php
 if(isset($_POST["updated"])){
+	
+	$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+	$db = new PDO($connection_string, $dbuser, $dbpass);
+	
+	
+	
     $title = $_POST["title"];
     $description = $_POST["description"];
 	$question1 = $_POST["question1"];
@@ -137,3 +113,36 @@ if(isset($_POST["updated"])){
     }
 }
 ?>
+
+
+
+<form method="POST">
+    <label for="title">Title
+	<input type="text" id="title" name="title" value="<?php echo get($result, "title");?>"/>
+	</label><br><br>
+	<label for="description">Description
+	<input type="text" id="description" name="description" value="<?php echo get($result, "description");?>"/>
+	</label><br><br>
+	
+	<label for="question1">Question 1
+	<input type="text" id="question1" name="question1" value="<?php echo get($result2, "question1");?>"/>
+	</label><br><br>
+	
+	<label for="question2">Question 2
+	<input type="text" id="question2" name="question2" value="<?php echo get($result2, "question2");?>"/>
+	</label><br><br>
+	
+	<label for="question3">Question 3
+	<input type="text" id="question3" name="question3" value="<?php echo get($result2, "question3");?>"/>
+	</label><br><br>
+	
+	<label for="question4">Question 4
+	<input type="text" id="question4" name="question4" value="<?php echo get($result2, "question4");?>"/>
+	</label><br><br>
+	
+	<label for="question5">Question 5
+	<input type="text" id="question5" name="question5" value="<?php echo get($result2, "question5");?>"/>
+	</label><br><br>
+	
+	<input type="submit" name="updated" value="Update Survey"/>
+</form>
