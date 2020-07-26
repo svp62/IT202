@@ -1,6 +1,7 @@
-<?php require_once("include/db_connection.php") ?>
-<?php require_once("include/function.php") ?>
-<?php require_once("include/session.php") ?>
+<?php require("include/db_connection.php") ?>
+<?php require("include/function.php") ?>
+<?php require("include/session.php") ?>
+
 <?php  
 if(isset($_POST['submit'])){
 	$name = $_POST['name'];
@@ -8,16 +9,14 @@ if(isset($_POST['submit'])){
 	$password = $_POST['confirmPasword'];
 	$Role = "User";
 
-	// echo "<pre>";
-	// print_r($_POST);
-	// echo "</pre>";
-
-	// die();
-
+	
+		$db = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 	$hashPassword = password_hash($password, PASSWORD_DEFAULT);
 
 	try
 	{
+		
+		$conn = new PDO($db, $dbuser, $dbpass);
 		$stmt = $conn->prepare("INSERT INTO `user`(`Name`, `Email`, `Password`, `Role`) VALUES (?, ?, ?)");
 		$stmt->bindParam(1,$name);
 		$stmt->bindParam(2,$email);
@@ -37,7 +36,7 @@ if(isset($_POST['submit'])){
 
 }
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">

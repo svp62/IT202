@@ -6,8 +6,12 @@
 if(isset($_POST["submit"])){
 	$email = $_POST['email'];
 	$password =  $_POST["password"];
+	
+	
+	$db = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 	try
 	{
+		$conn = new PDO($db, $dbuser, $dbpass);
 		$stmt = $conn->prepare("SELECT * FROM `user` WHERE Email = ?");
 		$stmt->execute([$email]); 
 		
