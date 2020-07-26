@@ -1,4 +1,6 @@
+
 <?php
+include("style.css");
 require("functions.php");
 $db = getDB();
 $idnum = -1;
@@ -8,7 +10,7 @@ if(isset($_GET["idnum"])){
     $idnum = $_GET["idnum"];
     $stmt = $db->prepare("SELECT * FROM Survey where id = :id");
     $stmt->execute([":id"=>$idnum]);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $result = $stmt->fetch(PDO::FETCH_NUM);
 }
 else{
     echo "ID not provided in url. Please put '?idnum=(id number where you want to update data)' at the end of URL. ";
