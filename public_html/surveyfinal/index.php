@@ -21,7 +21,7 @@ if(!isset($_SESSION['Role']) && $_SESSION['Role'] != "User"){
 		
 		if($stmt->rowCount() > 0){
 			$row = $stmt->fetch(PDO::FETCH_ASSOC);
-				
+				echo $row;
 		}
 
 		
@@ -46,7 +46,7 @@ if(!isset($_SESSION['Role']) && $_SESSION['Role'] != "User"){
 <head>
 	<meta charset="UTF-8">
 	<title>Home</title>
-	<title><?php echo $row; ?></title>
+	
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
@@ -70,9 +70,7 @@ if(!isset($_SESSION['Role']) && $_SESSION['Role'] != "User"){
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="edit_password.php"> <?php echo $_SESSION['username'] ; ?></a>
-				</li>
+				
 				<li class="nav-item">
 					<a class="nav-link" href="edit_password.php">Change Password</a>
 				</li>
