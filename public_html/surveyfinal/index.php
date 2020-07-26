@@ -71,6 +71,9 @@ if(!isset($_SESSION['Role']) && $_SESSION['Role'] != "User"){
 					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="edit_password.php"><?php echo $row; ?></a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="edit_password.php">Change Password</a>
 				</li>
 				<li class="nav-item">
