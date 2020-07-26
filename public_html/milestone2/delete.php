@@ -27,7 +27,7 @@ else{
 	</label>
 	<label for="description">Description
 	<input type="text" id="description" name="description" value="<?php echo get($result, "description");?>"/>
-	</label>
+	</label><br><br>
 	<label for="question1">Question 1
 	<input type="text" id="question1" name="question1" value="<?php echo get($result2, "question1");?>"/>
 	</label><br><br>
