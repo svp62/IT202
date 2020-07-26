@@ -16,12 +16,8 @@ if(isset($_POST["submit"])){
 	$SurveyID = $_POST['SurveyID'];
 	$count_inserts = count(array_values($QuestionIDArray));
 
-	// echo "<pre>";
-	// print_r($_POST);
-	// print_r($_SESSION);
-	// echo "</pre>";
-
-	// die();
+	$db = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+	$conn = new PDO($db, $dbuser, $dbpass);
 
 	$query = "INSERT INTO `answer`(`QuestionID`, `Answer`) VALUES (?,?)";
 	$stmt = $conn->prepare($query);
@@ -62,7 +58,7 @@ if(isset($_POST["submit"])){
 
 }
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">

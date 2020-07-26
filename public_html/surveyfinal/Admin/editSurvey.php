@@ -17,12 +17,8 @@ if(isset($_POST["submit"])){
 	$Name = $_POST['Name'];
 	$count_inserts = count(array_values($QuestionIDArray));
 
-	// echo "<pre>";
-	// print_r($_POST);
-	// print_r($_SESSION);
-	// echo "</pre>";
-
-	// die();
+	$db = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+	$conn = new PDO($db, $dbuser, $dbpass);
 
 	$query2 = "UPDATE `survey` SET `Name`=? WHERE `ID` = ?";
 	$stmt = $conn->prepare($query2);
@@ -50,7 +46,7 @@ if(isset($_POST["submit"])){
 
 }
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">

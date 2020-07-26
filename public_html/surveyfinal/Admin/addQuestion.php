@@ -14,14 +14,12 @@ if(isset($_POST["submit"])){
 	$Question = $_POST['question'];
 	$SurveyID = $_SESSION['currentSurveyID'];
 
-	// echo "<pre>";
-	// print_r($_POST);
-	// print_r($_SESSION);
-	// echo "</pre>";
-
-	// die();
+	$db = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+	
 	try
 	{
+		
+		$conn = new PDO($db, $dbuser, $dbpass);
 		$stmt = $conn->prepare("INSERT INTO `question`(`SurveyID`, `Question`) VALUES (?,?)"); 	
 		$stmt->bindParam(1,$SurveyID);
 		$stmt->bindParam(2,$Question);
@@ -45,7 +43,7 @@ if(isset($_POST["submit"])){
 	}
 }
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">

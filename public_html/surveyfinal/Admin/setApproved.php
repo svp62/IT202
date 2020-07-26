@@ -12,6 +12,10 @@ if(!isset($_SESSION['Role']) && $_SESSION['Role'] != "Admin"){
 <?php 
 if(isset($_GET['SurveyID'])){
 	$SurveyID = $_GET['SurveyID'];
+	
+	$db = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+	$conn = new PDO($db, $dbuser, $dbpass);
+	
 	$query = "UPDATE `survey` SET `Approved`= 1 WHERE `ID` = ?";
 	$stmt = $conn->prepare($query);
 	$res = $stmt->execute([$SurveyID]);
