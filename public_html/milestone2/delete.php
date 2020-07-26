@@ -1,6 +1,6 @@
 
 <?php
-include("style.css");
+
 require("functions.php");
 $db = getDB();
 $idnum = -1;
