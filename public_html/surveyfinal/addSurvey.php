@@ -16,14 +16,11 @@ if(isset($_POST["submit"])){
 	$Created = date('Y-m-d');
 
 
-	// echo "<pre>";
-	// print_r($_POST);
-	// print_r($_SESSION);
-	// echo "</pre>";
+	$db = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 
-	// die();
 	try
 	{
+		$conn = new PDO($db, $dbuser, $dbpass);
 		$stmt = $conn->prepare("INSERT INTO `survey`(`UserID`, `Name`, `Created` ) VALUES (?,?,?)"); 	
 		$stmt->bindParam(1,$UserID);
 		$stmt->bindParam(2,$Name);
@@ -50,7 +47,7 @@ if(isset($_POST["submit"])){
 	}
 }
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
