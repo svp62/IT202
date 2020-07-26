@@ -13,7 +13,7 @@
 		$query = "SELECT * FROM `survey`";
 		$stmt = $conn->query($query);
 		if($stmt->rowCount() > 0){
-			while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 				
 				if($_SESSION['UserID'] != $row['takenBy'] && $row['Approved'] == 1){
 					echo '
