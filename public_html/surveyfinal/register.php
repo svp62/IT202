@@ -3,6 +3,7 @@
 <?php require("include/session.php") ?>
 
 <?php  
+session_start();
 if(isset($_POST['submit'])){
 	$name = $_POST['name'];
 	$email = $_POST['email'];

@@ -96,7 +96,7 @@ if(isset($_POST["submit"])){
 								$SurveyID = $_GET['SurveyID'];
 								setQuestion($conn,$SurveyID); 
 							?>
-							<button type="submit" name = "submit" class="btn btn-primary">Eidt Survey</button>
+							<button type="submit" name = "submit" class="btn btn-primary">Edit Survey</button>
 						</form>
 					</div>
 				</div>
