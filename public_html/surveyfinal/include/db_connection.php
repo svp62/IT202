@@ -12,23 +12,3 @@ $dbdatabase = substr($cleardb_url["path"],1);
 
 
 
-<?php
-/*	
-	try{
-		$host = 'localhost';
-		$dbName = 'survey';
-		$user = 'root';
-		$pass  ='';
-
-		//1.Creating Database connection
-		$conn=new PDO("mysql:host=$host;dbname=$dbName",$user,$pass);
-
-	}catch(PDOException $e)
-	{
-		echo $e->getMessage(); 
-	}
-
-	
-	
-*/
-?>
