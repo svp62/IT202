@@ -13,6 +13,7 @@ session_unset();
 session_destroy();
   
   echo "You have logged out please hit the login button to login again";
+  
 //echo var_export($_SESSION, true);
 
 
