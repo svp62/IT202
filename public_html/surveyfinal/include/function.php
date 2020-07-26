@@ -54,7 +54,7 @@
 		$query = "SELECT * FROM `survey`";
 		$stmt = $conn->query($query);
 		if($stmt->rowCount() > 0){
-			while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 				
 				if($_SESSION['UserID'] != $row['takenBy'] && $row['Approved'] == 1){
 					echo '
@@ -99,7 +99,7 @@
 		$query = "SELECT * FROM `survey` WHERE Approved = 0";
 		$stmt = $conn->query($query);
 		if($stmt->rowCount() > 0){
-			while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 				
 			echo '
 				<tr>
@@ -128,7 +128,7 @@
 		$stmt = $conn->prepare("SELECT * FROM question WHERE SurveyID = ?");
 		$stmt->execute([$SurveyID]);
 		$count = 0;
-		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$count++;
 		    echo '
 				<div class="form-group">
@@ -146,7 +146,7 @@
 		$stmt = $conn->prepare("SELECT * FROM question WHERE SurveyID = ?");
 		$stmt->execute([$SurveyID]);
 		$count = 0;
-		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$count++;
 		    echo '
 				<div class="form-group">
