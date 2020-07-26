@@ -74,7 +74,7 @@ if(isset($_POST["delete"])){
             else{
                 
                 if ($result){
-                    echo "Successfully deleted data: " . $title;
+                    echo "Successfully deleted Survey: " . $title;
                 }
                 else{
                     echo "Error deleting data";
