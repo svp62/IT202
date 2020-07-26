@@ -17,11 +17,11 @@ if(isset($_POST['submit'])){
 	{
 		
 		$conn = new PDO($db, $dbuser, $dbpass);
-		$stmt = $conn->prepare("INSERT INTO `user`(`Name`, `Email`, `Password`, `Role`) VALUES (?, ?, ?)");
+		$stmt = $conn->prepare("INSERT INTO `user`(`Name`, `Email`, `Password`, `Role`) VALUES (?, ?, ?, ?)");
 		$stmt->bindParam(1,$name);
 		$stmt->bindParam(2,$email);
 		$stmt->bindParam(3,$hashPassword);
-		$stmt->bindParam(3,$Role);
+		$stmt->bindParam(4,$Role);
 
 		$stmt->execute();
 
