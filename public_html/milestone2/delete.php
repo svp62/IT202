@@ -22,9 +22,7 @@ else{
 	<label for="description">Description
 	<input type="text" id="description" name="description" value="<?php echo get($result, "description");?>"/>
 	</label>
-	<label for="visibility">Visibility
-	<input type="number" id="visibility" name="visibility" value="<?php echo get($result, "visibility");?>" />
-	</label>
+	
 	<input type="submit" name="delete" value="Delete Survey"/>
 </form>
 
@@ -32,8 +30,8 @@ else{
 if(isset($_POST["delete"])){
     $title = $_POST["title"];
     $description = $_POST["description"];
-    $visibility = $_POST["visibility"];
-    if(!empty($title) && !empty($description) && !empty($visibility)){
+   
+    if(!empty($title) && !empty($description) ){
         try{
             $stmt = $db->prepare("DELETE FROM Survey where id=:id");
             $result = $stmt->execute(array(
@@ -59,7 +57,7 @@ if(isset($_POST["delete"])){
         }
     }
     else{
-        echo "Title, Description and Visibility fields cannot be empty.";
+        echo "Title, Description  fields cannot be empty.";
     }
 }
 ?>
