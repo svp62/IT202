@@ -6,6 +6,38 @@
 if(!isset($_SESSION['Role']) && $_SESSION['Role'] != "User"){
 	$_SESSION['message_failed'] = "Login as Admin to get Access";
 	redirect_to("login.php");
+	
+	$email = $_POST['email'];
+	
+	
+	
+	
+	$db = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+	try
+	{
+		$conn = new PDO($db, $dbuser, $dbpass);
+		$stmt = $conn->prepare("SELECT Name FROM `user` WHERE Email = ?");
+		$stmt->execute([$email]); 
+		
+		if($stmt->rowCount() > 0){
+			$row = $stmt->fetch(PDO::FETCH_ASSOC);
+				
+		}
+
+		
+			
+		else{
+			$_SESSION['message_failed']="incorrect!!!";
+			//redirect_to("login.php");
+		}
+	}
+	catch(PDOException $e)
+	{
+
+		$_SESSION['message_failed']="Error: ".$e->getMessage();
+		//redirect_to("login.php");
+
+	}	
 }
 ?>
 
@@ -14,6 +46,7 @@ if(!isset($_SESSION['Role']) && $_SESSION['Role'] != "User"){
 <head>
 	<meta charset="UTF-8">
 	<title>Home</title>
+	<title><?php echo $row; ?></title>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
