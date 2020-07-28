@@ -55,7 +55,7 @@ function display_list(response) {
        survey_name = response[i]["name"];
       console.log(survey_name);
 	
-	html += '<td>' + '<a href="#" style="color: white;" ' + 'onclick=getquestion("' + survey_name + '") >' + survey_name   + ' </td>';
+	html += '<td>' + '<a href="#" style="color: blue;" ' + 'onclick=getquestion("' + survey_name + '") >' + survey_name   + ' </td>';
 	html += '</tbody>';
     }
     document.getElementById("review").innerHTML = html;

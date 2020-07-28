@@ -7,37 +7,8 @@ if(!isset($_SESSION['Role']) && $_SESSION['Role'] != "User"){
 	$_SESSION['message_failed'] = "Login as Admin to get Access";
 	redirect_to("login.php");
 	
-	$email = $_POST['email'];
 	
 	
-	
-	
-	$db = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
-	try
-	{
-		$conn = new PDO($db, $dbuser, $dbpass);
-		$stmt = $conn->prepare("SELECT Name FROM `user` WHERE Email = ?");
-		$stmt->execute([$email]); 
-		
-		if($stmt->rowCount() > 0){
-			$row = $stmt->fetch(PDO::FETCH_ASSOC);
-				echo $row;
-		}
-
-		
-			
-		else{
-			$_SESSION['message_failed']="incorrect!!!";
-			//redirect_to("login.php");
-		}
-	}
-	catch(PDOException $e)
-	{
-
-		$_SESSION['message_failed']="Error: ".$e->getMessage();
-		//redirect_to("login.php");
-
-	}	
 }
 ?>
 
